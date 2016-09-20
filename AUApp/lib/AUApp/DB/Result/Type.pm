@@ -46,12 +46,6 @@ __PACKAGE__->add_columns(
   { data_type => "integer", is_nullable => 1 },
 );
 __PACKAGE__->set_primary_key("id");
-__PACKAGE__->might_have(
-  "indice",
-  "AUApp::DB::Result::Indices",
-  { "foreign.structure" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
 __PACKAGE__->has_many(
   "input_outputs",
   "AUApp::DB::Result::InputOutput",
@@ -103,12 +97,6 @@ __PACKAGE__->has_many(
   { "foreign.result" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
-__PACKAGE__->might_have(
-  "superdescriptor",
-  "AUApp::DB::Result::Superdescriptor",
-  { "foreign.structure" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
 __PACKAGE__->has_many(
   "type_parents",
   "AUApp::DB::Result::Type",
@@ -125,12 +113,6 @@ __PACKAGE__->has_many(
   "type_redefines",
   "AUApp::DB::Result::Type",
   { "foreign.redefine" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->has_many(
-  "working_storages",
-  "AUApp::DB::Result::WorkingStorage",
-  { "foreign.structure" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 

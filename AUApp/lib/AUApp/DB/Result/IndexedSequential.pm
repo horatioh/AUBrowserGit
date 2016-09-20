@@ -28,12 +28,6 @@ __PACKAGE__->belongs_to(
   { id => "id" },
   { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
 );
-__PACKAGE__->has_many(
-  "indices",
-  "AUApp::DB::Result::Indices",
-  { "foreign.is_file" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
 
 
 # Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-09-17 15:10:26

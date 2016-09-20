@@ -56,130 +56,84 @@ __PACKAGE__->config(
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
-          library_type => {
-            header => 'library_type',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          id => {
-            header => 'id',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
           name => {
             header => 'name',
-            #width => 100,
+            width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           uri => {
             header => 'uri',
-            #width => 100,
+            width => 400,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          library_type => {
+            header => 'type',
+            width => 50,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           version => {
             header => 'version',
+            no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           sublibrary_type => {
-            header => 'sublibrary_type',
+            header => 'subtype',
+            no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           database_id => {
-            header => 'database_id',
+            header => 'database id',
+            no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           prime_library => {
-            header => 'prime_library',
-            #width => 100,
+            header => 'prime lib',
+            width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           abstractlibraries => {
-            header => 'abstractlibraries',
-            #width => 100,
+            header => 'libraries',
+            width => 100,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           input_outputs => {
             header => 'input_outputs',
-            #width => 100,
+            width => 120,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           programs => {
             header => 'programs',
-            #width => 100,
+            width => 120,
             #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
-      'Ddm' => {
-        display_column => 'id',
-        title          => 'Ddm',
-        title_multi    => 'Ddm Rows',
-        iconCls        => 'ra-icon-pg',
-        multiIconCls   => 'ra-icon-pg-multi',
-        columns        => {
-          database_id => {
-            header => 'database_id',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          file_id => {
-            header => 'file_id',
-            #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           id => {
             header => 'id',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          superdescriptors => {
-            header => 'superdescriptors',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
-      'DliDatabase' => {
-        display_column => 'id',
-        title          => 'DliDatabase',
-        title_multi    => 'DliDatabase Rows',
-        iconCls        => 'ra-icon-pg',
-        multiIconCls   => 'ra-icon-pg-multi',
-        columns        => {
-          id => {
-            header => 'id',
-            #width => 100,
+            width => 30,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
         },
       },
       'Dynamiccall' => {
-        display_column => 'id',
+        display_column => 'program',
         title          => 'Dynamiccall',
-        title_multi    => 'Dynamiccall Rows',
+        title_multi    => 'Dynamiccalls',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -191,6 +145,7 @@ __PACKAGE__->config(
           },
           version => {
             header => 'version',
+            no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
@@ -217,8 +172,8 @@ __PACKAGE__->config(
       },
       'Fieldtofield' => {
         display_column => 'id',
-        title          => 'Fieldtofield',
-        title_multi    => 'Fieldtofield Rows',
+        title          => 'Field to field',
+        title_multi    => 'Field to fields',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -228,13 +183,13 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          source => {
+          source_id => {
             header => 'source',
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          target => {
+          target_id => {
             header => 'target',
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
@@ -251,18 +206,6 @@ __PACKAGE__->config(
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             profiles => [ 'hidden' ],
-          },
-          flow => {
-            header => 'flow',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          input => {
-            header => 'input',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
           },
         },
       },
@@ -324,8 +267,8 @@ __PACKAGE__->config(
       'FlowInput' => {
 
         display_column => 'input',
-        title        => 'FlowInput',
-        title_multi  => 'FlowInputs',
+        title        => 'Flow Input',
+        title_multi  => 'Flow Inputs',
         iconCls      => 'ra-icon-pg',
         multiIconCls => 'ra-icon-pg-multi',
         columns      => {
@@ -345,8 +288,8 @@ __PACKAGE__->config(
       },
       'IndexedSequential' => {
         display_column => 'id',
-        title          => 'IndexedSequential',
-        title_multi    => 'IndexedSequential Rows',
+        title          => 'Indexed Sequential',
+        title_multi    => 'Indexed Sequentials',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -372,34 +315,6 @@ __PACKAGE__->config(
             header => 'indices',
             #width => 100,
             #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
-      'Indices' => {
-
-        #display_column => '',
-        title        => 'Indices',
-        title_multi  => 'Indices Rows',
-        iconCls      => 'ra-icon-pg',
-        multiIconCls => 'ra-icon-pg-multi',
-        columns      => {
-          is_file => {
-            header => 'is_file',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          structure => {
-            header => 'structure',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          succession => {
-            header => 'succession',
-            #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
@@ -556,8 +471,8 @@ __PACKAGE__->config(
       'LogicalPhysical' => {
 
         #display_column => '',
-        title        => 'LogicalPhysical',
-        title_multi  => 'LogicalPhysical Rows',
+        title        => 'Logical Physical',
+        title_multi  => 'Logical Physicals',
         iconCls      => 'ra-icon-pg',
         multiIconCls => 'ra-icon-pg-multi',
         columns      => {
@@ -578,7 +493,7 @@ __PACKAGE__->config(
       'Measure' => {
         display_column => 'id',
         title          => 'Measure',
-        title_multi    => 'Measure Rows',
+        title_multi    => 'Measures',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -628,49 +543,10 @@ __PACKAGE__->config(
           },
         },
       },
-      'ParameterRegistry' => {
-        display_column => 'name',
-        title          => 'ParameterRegistry',
-        title_multi    => 'ParameterRegistry Rows',
-        iconCls        => 'ra-icon-pg',
-        multiIconCls   => 'ra-icon-pg-multi',
-        columns        => {
-          id => {
-            header => 'id',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          name => {
-            header => 'name',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          subsystem => {
-            header => 'subsystem',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          parameter_value => {
-            header => 'parameter_value',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          version => {
-            header => 'version',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
       'Printer' => {
         display_column => 'id',
         title          => 'Printer',
-        title_multi    => 'Printer Rows',
+        title_multi    => 'Printers',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -915,8 +791,8 @@ __PACKAGE__->config(
       'ProgramFlow' => {
 
         display_column => 'flow',
-        title        => 'ProgramFlow',
-        title_multi  => 'ProgramFlows',
+        title        => 'Program Flow',
+        title_multi  => 'Program Flows',
         iconCls      => 'ra-icon-pg',
         multiIconCls => 'ra-icon-pg-multi',
         columns      => {
@@ -943,8 +819,8 @@ __PACKAGE__->config(
       'ProgramInput' => {
 
         display_column => 'input',
-        title        => 'ProgramInput',
-        title_multi  => 'ProgramInputs',
+        title        => 'Program Input',
+        title_multi  => 'Program Inputs',
         iconCls      => 'ra-icon-pg',
         multiIconCls => 'ra-icon-pg-multi',
         columns      => {
@@ -965,8 +841,8 @@ __PACKAGE__->config(
       'ProgramOutput' => {
 
         display_column => 'output',
-        title        => 'ProgramOutput',
-        title_multi  => 'ProgramOutputs',
+        title        => 'Program Output',
+        title_multi  => 'Program Outputs',
         iconCls      => 'ra-icon-pg',
         multiIconCls => 'ra-icon-pg-multi',
         columns      => {
@@ -999,8 +875,8 @@ __PACKAGE__->config(
       },
       'ProgramStatement' => {
         display_column => 'id',
-        title          => 'ProgramStatement',
-        title_multi    => 'ProgramStatements',
+        title          => 'Program Statement',
+        title_multi    => 'Program Statements',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -1032,8 +908,8 @@ __PACKAGE__->config(
       },
       'ProgramUsing' => {
         display_column => 'id',
-        title          => 'ProgramUsing',
-        title_multi    => 'ProgramUsing Rows',
+        title          => 'Program Using',
+        title_multi    => 'Program Usings',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -1075,55 +951,13 @@ __PACKAGE__->config(
           },
         },
       },
-      'RdbmsTable' => {
-        display_column => 'id',
-        title          => 'RdbmsTable',
-        title_multi    => 'RdbmsTable Rows',
-        iconCls        => 'ra-icon-pg',
-        multiIconCls   => 'ra-icon-pg-multi',
-        columns        => {
-          id => {
-            header => 'id',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
       'Screen' => {
         display_column => 'id',
         title          => 'Screen',
-        title_multi    => 'Screen Rows',
+        title_multi    => 'Screens',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
-          id => {
-            header => 'id',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
-      'Sequential' => {
-        display_column => 'id',
-        title          => 'Sequential',
-        title_multi    => 'Sequential Rows',
-        iconCls        => 'ra-icon-pg',
-        multiIconCls   => 'ra-icon-pg-multi',
-        columns        => {
-          record_format => {
-            header => 'record_format',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          record_length => {
-            header => 'record_length',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
           id => {
             header => 'id',
             #width => 100,
@@ -1135,7 +969,7 @@ __PACKAGE__->config(
       'Step' => {
         display_column => 'name',
         title          => 'Step',
-        title_multi    => 'Step Rows',
+        title_multi    => 'Steps',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -1231,8 +1065,8 @@ __PACKAGE__->config(
       'StepArgument' => {
 
         #display_column => '',
-        title        => 'StepArgument',
-        title_multi  => 'StepArgument Rows',
+        title        => 'Step Argument',
+        title_multi  => 'Step Arguments',
         iconCls      => 'ra-icon-pg',
         multiIconCls => 'ra-icon-pg-multi',
         columns      => {
@@ -1259,8 +1093,8 @@ __PACKAGE__->config(
       'StepCondition' => {
 
         #display_column => '',
-        title        => 'StepCondition',
-        title_multi  => 'StepCondition Rows',
+        title        => 'Step Condition',
+        title_multi  => 'Step Conditions',
         iconCls      => 'ra-icon-pg',
         multiIconCls => 'ra-icon-pg-multi',
         columns      => {
@@ -1296,38 +1130,10 @@ __PACKAGE__->config(
           },
         },
       },
-      'Superdescriptor' => {
-
-        #display_column => '',
-        title        => 'Superdescriptor',
-        title_multi  => 'Superdescriptor Rows',
-        iconCls      => 'ra-icon-pg',
-        multiIconCls => 'ra-icon-pg-multi',
-        columns      => {
-          ddm => {
-            header => 'ddm',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          structure => {
-            header => 'structure',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          succession => {
-            header => 'succession',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
       'Token' => {
-        display_column => 'id',
+        display_column => 'text',
         title          => 'Token',
-        title_multi    => 'Token Rows',
+        title_multi    => 'Tokens',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -1431,7 +1237,7 @@ __PACKAGE__->config(
       'Type' => {
         display_column => 'name',
         title          => 'Type',
-        title_multi    => 'Type Rows',
+        title_multi    => 'Types',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -1590,8 +1396,8 @@ __PACKAGE__->config(
       },
       'VType' => {
         display_column => 'name',
-        title          => 'VType',
-        title_multi    => 'VType Rows',
+        title          => 'V_Type',
+        title_multi    => 'V_Types',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -1675,34 +1481,6 @@ __PACKAGE__->config(
           },
           redefine => {
             header => 'redefine',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          succession => {
-            header => 'succession',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
-      'WorkingStorage' => {
-
-        #display_column => '',
-        title        => 'WorkingStorage',
-        title_multi  => 'WorkingStorage Rows',
-        iconCls      => 'ra-icon-pg',
-        multiIconCls => 'ra-icon-pg-multi',
-        columns      => {
-          program => {
-            header => 'program',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          structure => {
-            header => 'structure',
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],

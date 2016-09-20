@@ -114,12 +114,6 @@ __PACKAGE__->has_many(
   { "foreign.used" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
-__PACKAGE__->has_many(
-  "working_storages",
-  "AUApp::DB::Result::WorkingStorage",
-  { "foreign.program" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
 
 
 # Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-09-17 15:10:26

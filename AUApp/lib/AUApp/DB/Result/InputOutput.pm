@@ -33,18 +33,7 @@ __PACKAGE__->add_columns(
 );
 __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("uk420h355gjp2ma90ceo3sjp2vp", ["library", "name"]);
-__PACKAGE__->might_have(
-  "ddm",
-  "AUApp::DB::Result::Ddm",
-  { "foreign.id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->might_have(
-  "dli_database",
-  "AUApp::DB::Result::DliDatabase",
-  { "foreign.id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
+
 __PACKAGE__->has_many(
   "fieldtofields",
   "AUApp::DB::Result::Fieldtofield",
@@ -116,12 +105,6 @@ __PACKAGE__->has_many(
   { "foreign.output" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
-__PACKAGE__->might_have(
-  "rdbms_table",
-  "AUApp::DB::Result::RdbmsTable",
-  { "foreign.id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
 __PACKAGE__->belongs_to(
   "record",
   "AUApp::DB::Result::Type",
@@ -136,12 +119,6 @@ __PACKAGE__->belongs_to(
 __PACKAGE__->might_have(
   "screen",
   "AUApp::DB::Result::Screen",
-  { "foreign.id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
-);
-__PACKAGE__->might_have(
-  "sequential",
-  "AUApp::DB::Result::Sequential",
   { "foreign.id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );

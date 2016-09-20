@@ -14,22 +14,22 @@ extends 'DBIx::Class::Core';
 __PACKAGE__->load_components("InflateColumn::DateTime");
 __PACKAGE__->table("abstractlibrary");
 __PACKAGE__->add_columns(
-  "library_type",
-  { data_type => "varchar", is_nullable => 0, size => 6 },
-  "id",
-  { data_type => "bigint", is_nullable => 0 },
   "name",
   { data_type => "varchar", is_nullable => 0, size => 255 },
   "uri",
   { data_type => "varchar", is_nullable => 1, size => 255 },
-  "version",
-  { data_type => "integer", is_nullable => 0 },
-  "sublibrary_type",
-  { data_type => "integer", is_nullable => 1 },
-  "database_id",
-  { data_type => "integer", is_nullable => 1 },
+  "library_type",
+  { data_type => "varchar", is_nullable => 0, size => 6 },
   "prime_library",
   { data_type => "bigint", is_foreign_key => 1, is_nullable => 1 },
+  "sublibrary_type",
+  { data_type => "integer", is_nullable => 1 },
+  "id",
+  { data_type => "bigint", is_nullable => 0 },
+  "version",
+  { data_type => "integer", is_nullable => 0 },
+  "database_id",
+  { data_type => "integer", is_nullable => 1 },
 );
 __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("ukkjdpayt5m64lvvo3mnf8hsddh", ["prime_library", "name"]);
