@@ -1,7 +1,7 @@
 # This Makefile is for the AUApp extension to perl.
 #
 # It was generated automatically by MakeMaker version
-# 7.14 (Revision: 71400) from the contents of
+# 7.1001 (Revision: 71001) from the contents of
 # Makefile.PL. Don't edit this file, edit Makefile.PL instead.
 #
 #       ANY CHANGES MADE HERE WILL BE LOST!
@@ -12,7 +12,7 @@
 #   MakeMaker Parameters:
 
 #     ABSTRACT => q[Catalyst/RapidApp based application]
-#     AUTHOR => [q[U-WIN\pgitzel,S-1-5-21-4186282176-3833931747-852283848-1105]]
+#     AUTHOR => [q[U-GROUPINFRA\gitzelp,S-1-5-21-3641078771-3653456904-245653651-141386]]
 #     BUILD_REQUIRES => { ExtUtils::MakeMaker=>q[6.36], Test::More=>q[0.88] }
 #     CONFIGURE_REQUIRES => {  }
 #     DISTNAME => q[AUApp]
@@ -33,7 +33,7 @@
 
 # --- MakeMaker const_config section:
 
-# These definitions are from config.sh (via /usr/lib/perl5/5.22/x86_64-cygwin-threads/Config.pm).
+# These definitions are from config.sh (via /home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/lib/5.25.0/cygwin-thread-multi/Config.pm).
 # They may have been overridden via Makefile.PL or on the command line.
 AR = ar
 CC = gcc
@@ -44,19 +44,19 @@ DLSRC = dl_dlopen.xs
 EXE_EXT = .exe
 FULL_AR = /usr/bin/ar
 LD = g++
-LDDLFLAGS =  --shared  -Wl,--enable-auto-import -Wl,--export-all-symbols -Wl,--enable-auto-image-base -fstack-protector-strong
-LDFLAGS =  -Wl,--enable-auto-import -Wl,--export-all-symbols -Wl,--enable-auto-image-base -fstack-protector-strong
-LIBC = /usr/lib/libcygwin.a
+LDDLFLAGS =  --shared  -Wl,--enable-auto-import -Wl,--export-all-symbols -Wl,--enable-auto-image-base -L/usr/local/lib -fstack-protector-strong
+LDFLAGS =  -Wl,--enable-auto-import -Wl,--export-all-symbols -Wl,--enable-auto-image-base -fstack-protector-strong -L/usr/local/lib
+LIBC = /usr/lib/libc.a
 LIB_EXT = .a
 OBJ_EXT = .o
 OSNAME = cygwin
-OSVERS = 2.5.1(0.29753)
+OSVERS = 2.5.1\(0.29753\)
 RANLIB = :
-SITELIBEXP = /usr/lib/perl5/site_perl/5.22
-SITEARCHEXP = /usr/lib/perl5/site_perl/5.22/x86_64-cygwin-threads
+SITELIBEXP = /home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/lib/site_perl/5.25.0
+SITEARCHEXP = /home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/lib/site_perl/5.25.0/cygwin-thread-multi
 SO = dll
-VENDORARCHEXP = /usr/lib/perl5/vendor_perl/5.22/x86_64-cygwin-threads
-VENDORLIBEXP = /usr/lib/perl5/vendor_perl/5.22
+VENDORARCHEXP = 
+VENDORLIBEXP = 
 
 
 # --- MakeMaker constants section:
@@ -81,7 +81,7 @@ INST_MAN3DIR = blib/man3
 MAN1EXT = 1
 MAN3EXT = 3pm
 INSTALLDIRS = site
-INSTALL_BASE = /home/pgitzel/perl5
+INSTALL_BASE = /home/gitzelp/.perlbrew/libs/perl-5.25.0@cyg_perl5
 DESTDIR = 
 PREFIX = $(INSTALL_BASE)
 INSTALLPRIVLIB = $(INSTALL_BASE)/lib/perl5
@@ -121,17 +121,17 @@ DESTINSTALLSITEMAN3DIR = $(DESTDIR)$(INSTALLSITEMAN3DIR)
 INSTALLVENDORMAN3DIR = $(INSTALL_BASE)/man/man3
 DESTINSTALLVENDORMAN3DIR = $(DESTDIR)$(INSTALLVENDORMAN3DIR)
 PERL_LIB =
-PERL_ARCHLIB = /usr/lib/perl5/5.22/x86_64-cygwin-threads
-PERL_ARCHLIBDEP = /usr/lib/perl5/5.22/x86_64-cygwin-threads
+PERL_ARCHLIB = /home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/lib/5.25.0/cygwin-thread-multi
+PERL_ARCHLIBDEP = /home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/lib/5.25.0/cygwin-thread-multi
 LIBPERL_A = libperl.a
 FIRST_MAKEFILE = Makefile
 MAKEFILE_OLD = Makefile.old
 MAKE_APERL_FILE = Makefile.aperl
 PERLMAINCC = $(CC)
-PERL_INC = /usr/lib/perl5/5.22/x86_64-cygwin-threads/CORE
-PERL_INCDEP = /usr/lib/perl5/5.22/x86_64-cygwin-threads/CORE
-PERL = "/usr/bin/perl.exe" "-Iinc"
-FULLPERL = "/usr/bin/perl.exe" "-Iinc"
+PERL_INC = /home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/lib/5.25.0/cygwin-thread-multi/CORE
+PERL_INCDEP = /home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/lib/5.25.0/cygwin-thread-multi/CORE
+PERL = "/home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/bin/perl5.25.0.exe" "-Iinc"
+FULLPERL = "/home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/bin/perl5.25.0.exe" "-Iinc"
 ABSPERL = $(PERL)
 PERLRUN = $(PERL)
 FULLPERLRUN = $(FULLPERL)
@@ -144,9 +144,9 @@ PERM_DIR = 755
 PERM_RW = 644
 PERM_RWX = 755
 
-MAKEMAKER   = /usr/lib/perl5/vendor_perl/5.22/ExtUtils/MakeMaker.pm
-MM_VERSION  = 7.14
-MM_REVISION = 71400
+MAKEMAKER   = /home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/lib/5.25.0/ExtUtils/MakeMaker.pm
+MM_VERSION  = 7.1001
+MM_REVISION = 71001
 
 # FULLEXT = Pathname for extension directory (eg Foo/Bar/Oracle).
 # BASEEXT = Basename part of FULLEXT. May be just equal FULLEXT. (eg Oracle)
@@ -192,7 +192,7 @@ INST_BOOT        =
 
 # Extra linker info
 EXPORT_LIST        = 
-PERL_ARCHIVE       = $(PERL_INC)/cygperl5_22.dll
+PERL_ARCHIVE       = $(PERL_INC)/cygperl5_25_0.dll
 PERL_ARCHIVEDEP    = 
 PERL_ARCHIVE_AFTER = 
 
@@ -200,18 +200,18 @@ PERL_ARCHIVE_AFTER =
 TO_INST_PM = lib/AUApp.pm \
 	lib/AUApp/DB.pm \
 	lib/AUApp/DB/Result/Abstractlibrary.pm \
-	lib/AUApp/DB/Result/Ddm.pm \
-	lib/AUApp/DB/Result/DliDatabase.pm \
+	lib/AUApp/DB/Result/AllCalls.pm \
+	lib/AUApp/DB/Result/BusinessRule.pm \
+	lib/AUApp/DB/Result/CommentIo.pm \
+	lib/AUApp/DB/Result/CommentPrg.pm \
 	lib/AUApp/DB/Result/Dynamiccall.pm \
 	lib/AUApp/DB/Result/Fieldtofield.pm \
 	lib/AUApp/DB/Result/Flow.pm \
 	lib/AUApp/DB/Result/FlowInput.pm \
 	lib/AUApp/DB/Result/IndexedSequential.pm \
-	lib/AUApp/DB/Result/Indices.pm \
 	lib/AUApp/DB/Result/InputOutput.pm \
 	lib/AUApp/DB/Result/LogicalPhysical.pm \
 	lib/AUApp/DB/Result/Measure.pm \
-	lib/AUApp/DB/Result/ParameterRegistry.pm \
 	lib/AUApp/DB/Result/Printer.pm \
 	lib/AUApp/DB/Result/Program.pm \
 	lib/AUApp/DB/Result/ProgramCall.pm \
@@ -219,25 +219,82 @@ TO_INST_PM = lib/AUApp.pm \
 	lib/AUApp/DB/Result/ProgramFlow.pm \
 	lib/AUApp/DB/Result/ProgramInput.pm \
 	lib/AUApp/DB/Result/ProgramOutput.pm \
-	lib/AUApp/DB/Result/ProgramStatement.pm \
 	lib/AUApp/DB/Result/ProgramUsing.pm \
-	lib/AUApp/DB/Result/RdbmsTable.pm \
 	lib/AUApp/DB/Result/Screen.pm \
-	lib/AUApp/DB/Result/Sequential.pm \
 	lib/AUApp/DB/Result/Step.pm \
-	lib/AUApp/DB/Result/StepArgument.pm \
 	lib/AUApp/DB/Result/StepCondition.pm \
-	lib/AUApp/DB/Result/Superdescriptor.pm \
 	lib/AUApp/DB/Result/Token.pm \
 	lib/AUApp/DB/Result/Type.pm \
 	lib/AUApp/DB/Result/VType.pm \
-	lib/AUApp/DB/Result/WorkingStorage.pm \
 	lib/AUApp/Model/DB.pm \
 	lib/AUApp/Module/GridBase.pm
 
+PM_TO_BLIB = lib/AUApp.pm \
+	blib/lib/AUApp.pm \
+	lib/AUApp/DB.pm \
+	blib/lib/AUApp/DB.pm \
+	lib/AUApp/DB/Result/Abstractlibrary.pm \
+	blib/lib/AUApp/DB/Result/Abstractlibrary.pm \
+	lib/AUApp/DB/Result/AllCalls.pm \
+	blib/lib/AUApp/DB/Result/AllCalls.pm \
+	lib/AUApp/DB/Result/BusinessRule.pm \
+	blib/lib/AUApp/DB/Result/BusinessRule.pm \
+	lib/AUApp/DB/Result/CommentIo.pm \
+	blib/lib/AUApp/DB/Result/CommentIo.pm \
+	lib/AUApp/DB/Result/CommentPrg.pm \
+	blib/lib/AUApp/DB/Result/CommentPrg.pm \
+	lib/AUApp/DB/Result/Dynamiccall.pm \
+	blib/lib/AUApp/DB/Result/Dynamiccall.pm \
+	lib/AUApp/DB/Result/Fieldtofield.pm \
+	blib/lib/AUApp/DB/Result/Fieldtofield.pm \
+	lib/AUApp/DB/Result/Flow.pm \
+	blib/lib/AUApp/DB/Result/Flow.pm \
+	lib/AUApp/DB/Result/FlowInput.pm \
+	blib/lib/AUApp/DB/Result/FlowInput.pm \
+	lib/AUApp/DB/Result/IndexedSequential.pm \
+	blib/lib/AUApp/DB/Result/IndexedSequential.pm \
+	lib/AUApp/DB/Result/InputOutput.pm \
+	blib/lib/AUApp/DB/Result/InputOutput.pm \
+	lib/AUApp/DB/Result/LogicalPhysical.pm \
+	blib/lib/AUApp/DB/Result/LogicalPhysical.pm \
+	lib/AUApp/DB/Result/Measure.pm \
+	blib/lib/AUApp/DB/Result/Measure.pm \
+	lib/AUApp/DB/Result/Printer.pm \
+	blib/lib/AUApp/DB/Result/Printer.pm \
+	lib/AUApp/DB/Result/Program.pm \
+	blib/lib/AUApp/DB/Result/Program.pm \
+	lib/AUApp/DB/Result/ProgramCall.pm \
+	blib/lib/AUApp/DB/Result/ProgramCall.pm \
+	lib/AUApp/DB/Result/ProgramError.pm \
+	blib/lib/AUApp/DB/Result/ProgramError.pm \
+	lib/AUApp/DB/Result/ProgramFlow.pm \
+	blib/lib/AUApp/DB/Result/ProgramFlow.pm \
+	lib/AUApp/DB/Result/ProgramInput.pm \
+	blib/lib/AUApp/DB/Result/ProgramInput.pm \
+	lib/AUApp/DB/Result/ProgramOutput.pm \
+	blib/lib/AUApp/DB/Result/ProgramOutput.pm \
+	lib/AUApp/DB/Result/ProgramUsing.pm \
+	blib/lib/AUApp/DB/Result/ProgramUsing.pm \
+	lib/AUApp/DB/Result/Screen.pm \
+	blib/lib/AUApp/DB/Result/Screen.pm \
+	lib/AUApp/DB/Result/Step.pm \
+	blib/lib/AUApp/DB/Result/Step.pm \
+	lib/AUApp/DB/Result/StepCondition.pm \
+	blib/lib/AUApp/DB/Result/StepCondition.pm \
+	lib/AUApp/DB/Result/Token.pm \
+	blib/lib/AUApp/DB/Result/Token.pm \
+	lib/AUApp/DB/Result/Type.pm \
+	blib/lib/AUApp/DB/Result/Type.pm \
+	lib/AUApp/DB/Result/VType.pm \
+	blib/lib/AUApp/DB/Result/VType.pm \
+	lib/AUApp/Model/DB.pm \
+	blib/lib/AUApp/Model/DB.pm \
+	lib/AUApp/Module/GridBase.pm \
+	blib/lib/AUApp/Module/GridBase.pm
+
 
 # --- MakeMaker platform_constants section:
-MM_Unix_VERSION = 7.14
+MM_Unix_VERSION = 7.1001
 PERL_MALLOC_DEF = -DPERL_EXTMALLOC_DEF -Dmalloc=Perl_malloc -Dfree=Perl_mfree -Drealloc=Perl_realloc -Dcalloc=Perl_calloc
 
 
@@ -329,15 +386,13 @@ DISTVNAME = AUApp-0.01
 PASTHRU = LIBPERL_A="$(LIBPERL_A)"\
 	LINKTYPE="$(LINKTYPE)"\
 	PREFIX="$(PREFIX)"\
-	INSTALL_BASE="$(INSTALL_BASE)"\
-	PASTHRU_DEFINE='$(DEFINE) $(PASTHRU_DEFINE)'\
-	PASTHRU_INC='$(INC) $(PASTHRU_INC)'
+	INSTALL_BASE="$(INSTALL_BASE)"
 
 
 # --- MakeMaker special_targets section:
 .SUFFIXES : .xs .c .C .cpp .i .s .cxx .cc $(OBJ_EXT)
 
-.PHONY: all config static dynamic test linkext manifest blibdirs clean realclean disttest distdir pure_all subdirs clean_subdirs makemakerdflt manifypods realclean_subdirs subdirs_dynamic subdirs_pure_nolink subdirs_static subdirs-test_dynamic subdirs-test_static test_dynamic test_static
+.PHONY: all config static dynamic test linkext manifest blibdirs clean realclean disttest distdir
 
 
 
@@ -354,9 +409,8 @@ PASTHRU = LIBPERL_A="$(LIBPERL_A)"\
 all :: pure_all manifypods
 	$(NOECHO) $(NOOP)
 
-pure_all :: config pm_to_blib subdirs linkext
-	$(NOECHO) $(NOOP)
 
+pure_all :: config pm_to_blib subdirs linkext
 	$(NOECHO) $(NOOP)
 
 subdirs :: $(MYEXTLIB)
@@ -421,7 +475,7 @@ $(INST_MAN3DIR)$(DFSEP).exists :: Makefile.PL
 
 # --- MakeMaker linkext section:
 
-linkext :: dynamic
+linkext :: $(LINKTYPE)
 	$(NOECHO) $(NOOP)
 
 
@@ -435,7 +489,7 @@ BOOTSTRAP =
 
 # --- MakeMaker dynamic section:
 
-dynamic :: $(FIRST_MAKEFILE) config $(INST_BOOT) $(INST_DYNAMIC)
+dynamic :: $(FIRST_MAKEFILE) $(BOOTSTRAP) $(INST_DYNAMIC)
 	$(NOECHO) $(NOOP)
 
 
@@ -459,7 +513,7 @@ POD2MAN_EXE = $(PERLRUN) "-MExtUtils::Command::MM" -e pod2man "--"
 POD2MAN = $(POD2MAN_EXE)
 
 
-manifypods : pure_all config  \
+manifypods : pure_all  \
 	lib/AUApp.pm \
 	lib/AUApp/Model/DB.pm \
 	script/auapp_cgi.pl \
@@ -487,20 +541,14 @@ manifypods : pure_all config  \
 
 EXE_FILES = script/auapp_cgi.pl script/auapp_create.pl script/auapp_fastcgi.pl script/auapp_server.pl script/auapp_test.pl
 
-pure_all :: $(INST_SCRIPT)/auapp_cgi.pl $(INST_SCRIPT)/auapp_create.pl $(INST_SCRIPT)/auapp_fastcgi.pl $(INST_SCRIPT)/auapp_server.pl $(INST_SCRIPT)/auapp_test.pl
+pure_all :: $(INST_SCRIPT)/auapp_create.pl $(INST_SCRIPT)/auapp_cgi.pl $(INST_SCRIPT)/auapp_server.pl $(INST_SCRIPT)/auapp_fastcgi.pl $(INST_SCRIPT)/auapp_test.pl
 	$(NOECHO) $(NOOP)
 
 realclean ::
 	$(RM_F) \
-	  $(INST_SCRIPT)/auapp_cgi.pl $(INST_SCRIPT)/auapp_create.pl \
-	  $(INST_SCRIPT)/auapp_fastcgi.pl $(INST_SCRIPT)/auapp_server.pl \
+	  $(INST_SCRIPT)/auapp_create.pl $(INST_SCRIPT)/auapp_cgi.pl \
+	  $(INST_SCRIPT)/auapp_server.pl $(INST_SCRIPT)/auapp_fastcgi.pl \
 	  $(INST_SCRIPT)/auapp_test.pl 
-
-$(INST_SCRIPT)/auapp_cgi.pl : script/auapp_cgi.pl $(FIRST_MAKEFILE) $(INST_SCRIPT)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists
-	$(NOECHO) $(RM_F) $(INST_SCRIPT)/auapp_cgi.pl
-	$(CP) script/auapp_cgi.pl $(INST_SCRIPT)/auapp_cgi.pl
-	$(FIXIN) $(INST_SCRIPT)/auapp_cgi.pl
-	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_SCRIPT)/auapp_cgi.pl
 
 $(INST_SCRIPT)/auapp_create.pl : script/auapp_create.pl $(FIRST_MAKEFILE) $(INST_SCRIPT)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists
 	$(NOECHO) $(RM_F) $(INST_SCRIPT)/auapp_create.pl
@@ -508,17 +556,23 @@ $(INST_SCRIPT)/auapp_create.pl : script/auapp_create.pl $(FIRST_MAKEFILE) $(INST
 	$(FIXIN) $(INST_SCRIPT)/auapp_create.pl
 	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_SCRIPT)/auapp_create.pl
 
-$(INST_SCRIPT)/auapp_fastcgi.pl : script/auapp_fastcgi.pl $(FIRST_MAKEFILE) $(INST_SCRIPT)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists
-	$(NOECHO) $(RM_F) $(INST_SCRIPT)/auapp_fastcgi.pl
-	$(CP) script/auapp_fastcgi.pl $(INST_SCRIPT)/auapp_fastcgi.pl
-	$(FIXIN) $(INST_SCRIPT)/auapp_fastcgi.pl
-	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_SCRIPT)/auapp_fastcgi.pl
+$(INST_SCRIPT)/auapp_cgi.pl : script/auapp_cgi.pl $(FIRST_MAKEFILE) $(INST_SCRIPT)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists
+	$(NOECHO) $(RM_F) $(INST_SCRIPT)/auapp_cgi.pl
+	$(CP) script/auapp_cgi.pl $(INST_SCRIPT)/auapp_cgi.pl
+	$(FIXIN) $(INST_SCRIPT)/auapp_cgi.pl
+	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_SCRIPT)/auapp_cgi.pl
 
 $(INST_SCRIPT)/auapp_server.pl : script/auapp_server.pl $(FIRST_MAKEFILE) $(INST_SCRIPT)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists
 	$(NOECHO) $(RM_F) $(INST_SCRIPT)/auapp_server.pl
 	$(CP) script/auapp_server.pl $(INST_SCRIPT)/auapp_server.pl
 	$(FIXIN) $(INST_SCRIPT)/auapp_server.pl
 	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_SCRIPT)/auapp_server.pl
+
+$(INST_SCRIPT)/auapp_fastcgi.pl : script/auapp_fastcgi.pl $(FIRST_MAKEFILE) $(INST_SCRIPT)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists
+	$(NOECHO) $(RM_F) $(INST_SCRIPT)/auapp_fastcgi.pl
+	$(CP) script/auapp_fastcgi.pl $(INST_SCRIPT)/auapp_fastcgi.pl
+	$(FIXIN) $(INST_SCRIPT)/auapp_fastcgi.pl
+	-$(NOECHO) $(CHMOD) $(PERM_RWX) $(INST_SCRIPT)/auapp_fastcgi.pl
 
 $(INST_SCRIPT)/auapp_test.pl : script/auapp_test.pl $(FIRST_MAKEFILE) $(INST_SCRIPT)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists
 	$(NOECHO) $(RM_F) $(INST_SCRIPT)/auapp_test.pl
@@ -567,18 +621,17 @@ clean :: clean_subdirs
 
 
 # --- MakeMaker realclean_subdirs section:
-# so clean is forced to complete before realclean_subdirs runs
-realclean_subdirs : clean
+realclean_subdirs :
 	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker realclean section:
 # Delete temporary files (via clean) and also delete dist files
-realclean purge :: realclean_subdirs
+realclean purge ::  clean realclean_subdirs
 	- $(RM_F) \
 	  $(FIRST_MAKEFILE) $(MAKEFILE_OLD) 
 	- $(RM_RF) \
-	  $(DISTVNAME) MYMETA.yml 
+	  MYMETA.yml $(DISTVNAME) 
 
 
 # --- MakeMaker metafile section:
@@ -681,17 +734,17 @@ ci :
 distmeta : create_distdir metafile
 	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'exit unless -e q{META.yml};' \
 	  -e 'eval { maniadd({q{META.yml} => q{Module YAML meta-data (added by MakeMaker)}}) }' \
-	  -e '    or die "Could not add META.yml to MANIFEST: $${'\''@'\''}"' --
+	  -e '    or print "Could not add META.yml to MANIFEST: $$$${'\''@'\''}\n"' --
 	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'exit unless -f q{META.json};' \
 	  -e 'eval { maniadd({q{META.json} => q{Module JSON meta-data (added by MakeMaker)}}) }' \
-	  -e '    or die "Could not add META.json to MANIFEST: $${'\''@'\''}"' --
+	  -e '    or print "Could not add META.json to MANIFEST: $$$${'\''@'\''}\n"' --
 
 
 
 # --- MakeMaker distsignature section:
 distsignature : distmeta
 	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'eval { maniadd({q{SIGNATURE} => q{Public-key signature (added by MakeMaker)}}) }' \
-	  -e '    or die "Could not add SIGNATURE to MANIFEST: $${'\''@'\''}"' --
+	  -e '    or print "Could not add SIGNATURE to MANIFEST: $$$${'\''@'\''}\n"' --
 	$(NOECHO) cd $(DISTVNAME) && $(TOUCH) SIGNATURE
 	cd $(DISTVNAME) && cpansign -s
 
@@ -767,7 +820,7 @@ doc_perl_install :: all
 	-$(NOECHO) $(MKPATH) "$(DESTINSTALLARCHLIB)"
 	-$(NOECHO) $(DOC_INSTALL) \
 		"Module" "$(NAME)" \
-		"installed into" "$(INSTALLPRIVLIB)" \
+		"installed into" $(INSTALLPRIVLIB) \
 		LINKTYPE "$(LINKTYPE)" \
 		VERSION "$(VERSION)" \
 		EXE_FILES "$(EXE_FILES)" \
@@ -778,7 +831,7 @@ doc_site_install :: all
 	-$(NOECHO) $(MKPATH) "$(DESTINSTALLARCHLIB)"
 	-$(NOECHO) $(DOC_INSTALL) \
 		"Module" "$(NAME)" \
-		"installed into" "$(INSTALLSITELIB)" \
+		"installed into" $(INSTALLSITELIB) \
 		LINKTYPE "$(LINKTYPE)" \
 		VERSION "$(VERSION)" \
 		EXE_FILES "$(EXE_FILES)" \
@@ -789,7 +842,7 @@ doc_vendor_install :: all
 	-$(NOECHO) $(MKPATH) "$(DESTINSTALLARCHLIB)"
 	-$(NOECHO) $(DOC_INSTALL) \
 		"Module" "$(NAME)" \
-		"installed into" "$(INSTALLVENDORLIB)" \
+		"installed into" $(INSTALLVENDORLIB) \
 		LINKTYPE "$(LINKTYPE)" \
 		VERSION "$(VERSION)" \
 		EXE_FILES "$(EXE_FILES)" \
@@ -838,13 +891,12 @@ $(FIRST_MAKEFILE) : Makefile.PL $(CONFIGDEP)
 
 # --- MakeMaker makeaperl section ---
 MAP_TARGET    = perl
-FULLPERL      = "/usr/bin/perl.exe"
-MAP_PERLINC   = "-Iblib/arch" "-Iblib/lib" "-I/usr/lib/perl5/5.22/x86_64-cygwin-threads" "-I/usr/lib/perl5/5.22"
+FULLPERL      = "/home/gitzelp/perl5/perlbrew/perls/perl-5.25.0/bin/perl5.25.0.exe"
 
-$(MAP_TARGET) :: $(MAKE_APERL_FILE)
+$(MAP_TARGET) :: static $(MAKE_APERL_FILE)
 	$(MAKE) $(USEMAKEFILE) $(MAKE_APERL_FILE) $@
 
-$(MAKE_APERL_FILE) : static $(FIRST_MAKEFILE) pm_to_blib
+$(MAKE_APERL_FILE) : $(FIRST_MAKEFILE) pm_to_blib
 	$(NOECHO) $(ECHO) Writing \"$(MAKE_APERL_FILE)\" for this $(MAP_TARGET)
 	$(NOECHO) $(PERLRUNINST) \
 		Makefile.PL DIR="" \
@@ -853,6 +905,7 @@ $(MAKE_APERL_FILE) : static $(FIRST_MAKEFILE) pm_to_blib
 
 
 # --- MakeMaker test section:
+
 TEST_VERBOSE=0
 TEST_TYPE=test_$(LINKTYPE)
 TEST_FILE = test.pl
@@ -860,115 +913,84 @@ TEST_FILES = t/01app.t t/02pod.t t/03podcoverage.t t/model_DB.t
 TESTDB_SW = -d
 
 testdb :: testdb_$(LINKTYPE)
+
+test :: $(TEST_TYPE) subdirs-test
+
+subdirs-test ::
 	$(NOECHO) $(NOOP)
 
-test :: $(TEST_TYPE)
-	$(NOECHO) $(NOOP)
 
-# Occasionally we may face this degenerate target:
-test_ : test_dynamic
-	$(NOECHO) $(NOOP)
-
-subdirs-test_dynamic :: dynamic pure_all
-
-test_dynamic :: subdirs-test_dynamic
+test_dynamic :: pure_all
 	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness($(TEST_VERBOSE), 'inc', '$(INST_LIB)', '$(INST_ARCHLIB)')" $(TEST_FILES)
 
-testdb_dynamic :: dynamic pure_all
+testdb_dynamic :: pure_all
 	PERL_DL_NONLAZY=1 $(FULLPERLRUN) $(TESTDB_SW) "-Iinc" "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
 
-subdirs-test_static :: static pure_all
+test_ : test_dynamic
 
-test_static :: subdirs-test_static
-	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness($(TEST_VERBOSE), '$(INST_LIB)', '$(INST_ARCHLIB)')" $(TEST_FILES)
-
-testdb_static :: static pure_all
-	PERL_DL_NONLAZY=1 $(FULLPERLRUN) $(TESTDB_SW) "-Iinc" "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
-
+test_static :: test_dynamic
+testdb_static :: testdb_dynamic
 
 
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="AUApp" VERSION="0.01">' > AUApp.ppd
-	$(NOECHO) $(ECHO) '    <ABSTRACT>Catalyst/RapidApp based application</ABSTRACT>' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '    <AUTHOR>U-WIN\pgitzel,S-1-5-21-4186282176-3833931747-852283848-1105</AUTHOR>' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Action::RenderView" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::ConfigLoader" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::Static::Simple" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Runtime" VERSION="5.90104" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Config::General" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Moose::" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <REQUIRE NAME="namespace::autoclean" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="cygwin-thread-multi-5.22" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '        <CODEBASE HREF="" />' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '    </IMPLEMENTATION>' >> AUApp.ppd
-	$(NOECHO) $(ECHO) '</SOFTPKG>' >> AUApp.ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="$(VERSION)">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <ABSTRACT>Catalyst/RapidApp based application</ABSTRACT>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <AUTHOR>U-GROUPINFRA\gitzelp,S-1-5-21-3641078771-3653456904-245653651-141386</AUTHOR>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Action::RenderView" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::ConfigLoader" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::Static::Simple" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Runtime" VERSION="5.90104" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Config::General" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Moose::" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="namespace::autoclean" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="cygwin-thread-multi-5.25" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <CODEBASE HREF="" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    </IMPLEMENTATION>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '</SOFTPKG>' >> $(DISTNAME).ppd
 
 
 # --- MakeMaker pm_to_blib section:
 
 pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
-	  'lib/AUApp.pm' 'blib/lib/AUApp.pm' \
-	  'lib/AUApp/DB.pm' 'blib/lib/AUApp/DB.pm' \
-	  'lib/AUApp/DB/Result/Abstractlibrary.pm' 'blib/lib/AUApp/DB/Result/Abstractlibrary.pm' \
-	  'lib/AUApp/DB/Result/Ddm.pm' 'blib/lib/AUApp/DB/Result/Ddm.pm' \
-	  'lib/AUApp/DB/Result/DliDatabase.pm' 'blib/lib/AUApp/DB/Result/DliDatabase.pm' \
-	  'lib/AUApp/DB/Result/Dynamiccall.pm' 'blib/lib/AUApp/DB/Result/Dynamiccall.pm' \
-	  'lib/AUApp/DB/Result/Fieldtofield.pm' 'blib/lib/AUApp/DB/Result/Fieldtofield.pm' \
-	  'lib/AUApp/DB/Result/Flow.pm' 'blib/lib/AUApp/DB/Result/Flow.pm' \
-	  'lib/AUApp/DB/Result/FlowInput.pm' 'blib/lib/AUApp/DB/Result/FlowInput.pm' \
-	  'lib/AUApp/DB/Result/IndexedSequential.pm' 'blib/lib/AUApp/DB/Result/IndexedSequential.pm' \
-	  'lib/AUApp/DB/Result/Indices.pm' 'blib/lib/AUApp/DB/Result/Indices.pm' \
-	  'lib/AUApp/DB/Result/InputOutput.pm' 'blib/lib/AUApp/DB/Result/InputOutput.pm' \
-	  'lib/AUApp/DB/Result/LogicalPhysical.pm' 'blib/lib/AUApp/DB/Result/LogicalPhysical.pm' \
-	  'lib/AUApp/DB/Result/Measure.pm' 'blib/lib/AUApp/DB/Result/Measure.pm' \
-	  'lib/AUApp/DB/Result/ParameterRegistry.pm' 'blib/lib/AUApp/DB/Result/ParameterRegistry.pm' \
-	  'lib/AUApp/DB/Result/Printer.pm' 'blib/lib/AUApp/DB/Result/Printer.pm' \
-	  'lib/AUApp/DB/Result/Program.pm' 'blib/lib/AUApp/DB/Result/Program.pm' \
-	  'lib/AUApp/DB/Result/ProgramCall.pm' 'blib/lib/AUApp/DB/Result/ProgramCall.pm' \
-	  'lib/AUApp/DB/Result/ProgramError.pm' 'blib/lib/AUApp/DB/Result/ProgramError.pm' \
-	  'lib/AUApp/DB/Result/ProgramFlow.pm' 'blib/lib/AUApp/DB/Result/ProgramFlow.pm' \
-	  'lib/AUApp/DB/Result/ProgramInput.pm' 'blib/lib/AUApp/DB/Result/ProgramInput.pm' \
-	  'lib/AUApp/DB/Result/ProgramOutput.pm' 'blib/lib/AUApp/DB/Result/ProgramOutput.pm' \
-	  'lib/AUApp/DB/Result/ProgramStatement.pm' 'blib/lib/AUApp/DB/Result/ProgramStatement.pm' \
-	  'lib/AUApp/DB/Result/ProgramUsing.pm' 'blib/lib/AUApp/DB/Result/ProgramUsing.pm' \
-	  'lib/AUApp/DB/Result/RdbmsTable.pm' 'blib/lib/AUApp/DB/Result/RdbmsTable.pm' \
-	  'lib/AUApp/DB/Result/Screen.pm' 'blib/lib/AUApp/DB/Result/Screen.pm' \
-	  'lib/AUApp/DB/Result/Sequential.pm' 'blib/lib/AUApp/DB/Result/Sequential.pm' \
-	  'lib/AUApp/DB/Result/Step.pm' 'blib/lib/AUApp/DB/Result/Step.pm' \
-	  'lib/AUApp/DB/Result/StepArgument.pm' 'blib/lib/AUApp/DB/Result/StepArgument.pm' \
-	  'lib/AUApp/DB/Result/StepCondition.pm' 'blib/lib/AUApp/DB/Result/StepCondition.pm' \
-	  'lib/AUApp/DB/Result/Superdescriptor.pm' 'blib/lib/AUApp/DB/Result/Superdescriptor.pm' \
-	  'lib/AUApp/DB/Result/Token.pm' 'blib/lib/AUApp/DB/Result/Token.pm' \
-	  'lib/AUApp/DB/Result/Type.pm' 'blib/lib/AUApp/DB/Result/Type.pm' \
-	  'lib/AUApp/DB/Result/VType.pm' 'blib/lib/AUApp/DB/Result/VType.pm' \
-	  'lib/AUApp/DB/Result/WorkingStorage.pm' 'blib/lib/AUApp/DB/Result/WorkingStorage.pm' \
-	  'lib/AUApp/Model/DB.pm' 'blib/lib/AUApp/Model/DB.pm' \
-	  'lib/AUApp/Module/GridBase.pm' 'blib/lib/AUApp/Module/GridBase.pm' 
+	  lib/AUApp.pm blib/lib/AUApp.pm \
+	  lib/AUApp/DB.pm blib/lib/AUApp/DB.pm \
+	  lib/AUApp/DB/Result/Abstractlibrary.pm blib/lib/AUApp/DB/Result/Abstractlibrary.pm \
+	  lib/AUApp/DB/Result/AllCalls.pm blib/lib/AUApp/DB/Result/AllCalls.pm \
+	  lib/AUApp/DB/Result/BusinessRule.pm blib/lib/AUApp/DB/Result/BusinessRule.pm \
+	  lib/AUApp/DB/Result/CommentIo.pm blib/lib/AUApp/DB/Result/CommentIo.pm \
+	  lib/AUApp/DB/Result/CommentPrg.pm blib/lib/AUApp/DB/Result/CommentPrg.pm \
+	  lib/AUApp/DB/Result/Dynamiccall.pm blib/lib/AUApp/DB/Result/Dynamiccall.pm \
+	  lib/AUApp/DB/Result/Fieldtofield.pm blib/lib/AUApp/DB/Result/Fieldtofield.pm \
+	  lib/AUApp/DB/Result/Flow.pm blib/lib/AUApp/DB/Result/Flow.pm \
+	  lib/AUApp/DB/Result/FlowInput.pm blib/lib/AUApp/DB/Result/FlowInput.pm \
+	  lib/AUApp/DB/Result/IndexedSequential.pm blib/lib/AUApp/DB/Result/IndexedSequential.pm \
+	  lib/AUApp/DB/Result/InputOutput.pm blib/lib/AUApp/DB/Result/InputOutput.pm \
+	  lib/AUApp/DB/Result/LogicalPhysical.pm blib/lib/AUApp/DB/Result/LogicalPhysical.pm \
+	  lib/AUApp/DB/Result/Measure.pm blib/lib/AUApp/DB/Result/Measure.pm \
+	  lib/AUApp/DB/Result/Printer.pm blib/lib/AUApp/DB/Result/Printer.pm \
+	  lib/AUApp/DB/Result/Program.pm blib/lib/AUApp/DB/Result/Program.pm \
+	  lib/AUApp/DB/Result/ProgramCall.pm blib/lib/AUApp/DB/Result/ProgramCall.pm \
+	  lib/AUApp/DB/Result/ProgramError.pm blib/lib/AUApp/DB/Result/ProgramError.pm \
+	  lib/AUApp/DB/Result/ProgramFlow.pm blib/lib/AUApp/DB/Result/ProgramFlow.pm \
+	  lib/AUApp/DB/Result/ProgramInput.pm blib/lib/AUApp/DB/Result/ProgramInput.pm \
+	  lib/AUApp/DB/Result/ProgramOutput.pm blib/lib/AUApp/DB/Result/ProgramOutput.pm \
+	  lib/AUApp/DB/Result/ProgramUsing.pm blib/lib/AUApp/DB/Result/ProgramUsing.pm \
+	  lib/AUApp/DB/Result/Screen.pm blib/lib/AUApp/DB/Result/Screen.pm \
+	  lib/AUApp/DB/Result/Step.pm blib/lib/AUApp/DB/Result/Step.pm \
+	  lib/AUApp/DB/Result/StepCondition.pm blib/lib/AUApp/DB/Result/StepCondition.pm \
+	  lib/AUApp/DB/Result/Token.pm blib/lib/AUApp/DB/Result/Token.pm \
+	  lib/AUApp/DB/Result/Type.pm blib/lib/AUApp/DB/Result/Type.pm \
+	  lib/AUApp/DB/Result/VType.pm blib/lib/AUApp/DB/Result/VType.pm \
+	  lib/AUApp/Model/DB.pm blib/lib/AUApp/Model/DB.pm \
+	  lib/AUApp/Module/GridBase.pm blib/lib/AUApp/Module/GridBase.pm 
 	$(NOECHO) $(TOUCH) pm_to_blib
 
 
 # --- MakeMaker selfdocument section:
-
-# here so even if top_targets is overridden, these will still be defined
-# gmake will silently still work if any are .PHONY-ed but nmake won't
-static ::
-	$(NOECHO) $(NOOP)
-
-dynamic ::
-	$(NOECHO) $(NOOP)
-
-static ::
-	$(NOECHO) $(NOOP)
-
-dynamic ::
-	$(NOECHO) $(NOOP)
-
-config ::
-	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker postamble section:

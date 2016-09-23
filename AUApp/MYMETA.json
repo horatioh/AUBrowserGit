@@ -1,10 +1,10 @@
 {
    "abstract" : "Catalyst/RapidApp based application",
    "author" : [
-      "U-WIN\\pgitzel,S-1-5-21-4186282176-3833931747-852283848-1105"
+      "U-GROUPINFRA\\gitzelp,S-1-5-21-3641078771-3653456904-245653651-141386"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 7.14, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "ExtUtils::MakeMaker version 7.1001, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -45,5 +45,5 @@
    },
    "release_status" : "stable",
    "version" : "0.01",
-   "x_serialization_backend" : "JSON::PP version 2.27400"
+   "x_serialization_backend" : "JSON::PP version 2.27300"
 }

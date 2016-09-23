@@ -112,7 +112,7 @@ __PACKAGE__->setup();
 
 # ---
 # This app was initially generated/bootrapped with:
-#  rapidapp.pl --helpers Templates,TabGui,AuthCore,NavCore,RapidDbic AUApp -- --dsn dbi:Pg:dbname=au;host=localhost;port=5432,au,Vienna
+#  rapidapp.pl --helpers Templates,TabGui,AuthCore,NavCore,RapidDbic AUApp -- --dsn dbi:Pg:dbname=au;host=localhost;port=5432,au,Vienna --loader-option db_schema=public --loader-option exclude=\A(ddm|dli_database|hierarchie_all|indices|parameter_registry|programoutputwithoutflow|program_statement|rdbms_table|sequential|step_argument|superdescriptor|working_storage)\z
 # ---
 
 
@@ -136,7 +136,7 @@ L<RapidApp>, L<Catalyst>
 
 =head1 AUTHOR
 
-U-WIN\pgitzel,S-1-5-21-4186282176-3833931747-852283848-1105
+U-GROUPINFRA\gitzelp,S-1-5-21-3641078771-3653456904-245653651-141386
 
 =head1 LICENSE
 

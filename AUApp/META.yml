@@ -1,7 +1,7 @@
 ---
 abstract: 'Catalyst/RapidApp based application'
 author:
-  - U-WIN\pgitzel,S-1-5-21-4186282176-3833931747-852283848-1105
+  - U-GROUPINFRA\gitzelp,S-1-5-21-3641078771-3653456904-245653651-141386
 build_requires:
   ExtUtils::MakeMaker: 6.36
   Test::More: '0.88'
