@@ -41,9 +41,19 @@ __PACKAGE__->config(
           }
         }
       },
+      'BusinessRule' => {
+        updatable_colspec   => ['*'],
+        creatable_colspec   => ['*'],
+        destroyable_relspec => ['*'],
+      	
+      },
       'ProgramOutput' => {
       	include_colspec => ['*', 'program.program_flows', 'program.program_inputs']
-      }
+      },
+ #     'Flow' => {
+ #     	include_colspec => ['*', 'output.name']
+ #     }
+      
     },
 
     # TableSpecs define extra RapidApp-specific metadata for each source
@@ -202,7 +212,7 @@ __PACKAGE__->config(
           },
           comment => {
             header => 'comment',
-            #width => 100,
+            width => 400,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
@@ -217,37 +227,37 @@ __PACKAGE__->config(
         columns        => {
           id => {
             header => 'id',
-            #width => 100,
+            width => 30,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           input_output => {
             header => 'input_output',
-            #width => 100,
+            width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           line_nr_from => {
-            header => 'line_nr_from',
-            #width => 100,
+            header => 'from line#',
+            width => 30,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           line_nr_to => {
-            header => 'line_nr_to',
-            #width => 100,
+            header => 'to line#',
+            width => 30,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           is_io_description => {
-            header => 'is_io_description',
-            #width => 100,
+            header => 'is Filedescription',
+            width => 20,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           comment => {
             header => 'comment',
-            #width => 100,
+            width => 400,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
@@ -262,37 +272,37 @@ __PACKAGE__->config(
         columns        => {
           id => {
             header => 'id',
-            #width => 100,
+            width => 30,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           program => {
             header => 'program',
-            #width => 100,
+            width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           line_nr_from => {
-            header => 'line_nr_from',
-            #width => 100,
+            header => 'from line#',
+            width => 30,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           line_nr_to => {
-            header => 'line_nr_to',
-            #width => 100,
+            header => 'to line#',
+            width => 30,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           is_io_description => {
-            header => 'is_io_description',
-            #width => 100,
+            header => 'is Programdescription',
+            width => 20,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           comment => {
             header => 'comment',
-            #width => 100,
+            width => 400,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
@@ -353,15 +363,17 @@ __PACKAGE__->config(
           },
           source_id => {
             header => 'source',
+            #no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['hidden' ],
           },
           target_id => {
             header => 'target',
+            #no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => [ 'hidden' ],
           },
           flow_id => {
             header => 'flow_id',
@@ -378,7 +390,7 @@ __PACKAGE__->config(
         },
       },
       'Flow' => {
-        display_column => 'output',
+        display_column => 'flow_name',
         title          => 'Flow to',
         title_multi    => 'Flows to',
         iconCls        => 'ra-icon-pg',
@@ -386,50 +398,59 @@ __PACKAGE__->config(
         columns        => {
           id => {
             header => 'id',
-            #width => 100,
+            width => 80,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           version => {
             header => 'version',
+            no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           output => {
             header => 'output',
-            #width => 100,
+            width => 120,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           fieldtofields => {
             header => 'fieldtofields',
-            #width => 100,
+            width => 130,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           flow_inputs => {
             header => 'flow_inputs',
-            #width => 100,
+            width => 110,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           program_flows => {
             header => 'program_flows',
-            #width => 100,
+            width => 130,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           steps => {
             header => 'steps',
-            #width => 100,
+            width => 100,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
+          business_rules => {
+            header => 'business rules',
+            width => 130,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          
         },
       },
       'FlowInput' => {
@@ -442,13 +463,13 @@ __PACKAGE__->config(
         columns      => {
           flow => {
             header => 'flow',
-            #width => 100,
+            width => 120,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           input => {
             header => 'input',
-            #width => 100,
+            width => 120,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
@@ -497,65 +518,53 @@ __PACKAGE__->config(
         columns        => {
           io_type => {
             header => 'io_type',
-            #width => 100,
+            width => 50,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           id => {
             header => 'id',
-            #width => 100,
+            width => 50,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           name => {
             header => 'name',
-            #width => 100,
+            width => 80,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           uri => {
             header => 'uri',
-            #width => 100,
+            width => 400,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           version => {
             header => 'version',
-            #width => 100,
+            width => 50,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['hidden' ],
           },
           library => {
             header => 'library',
-            #width => 100,
+            width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           measure => {
             header => 'measure',
-            #width => 100,
+            width => 50,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['hidden' ],
           },
           record => {
             header => 'record',
-            #width => 100,
+            width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          ddm => {
-            header => 'ddm',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          dli_database => {
-            header => 'dli_database',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          fieldtofields => {
+           fieldtofields => {
             header => 'fieldtofields',
             #width => 100,
             #sortable => 1,
@@ -598,9 +607,9 @@ __PACKAGE__->config(
           },
           printer => {
             header => 'printer',
-            #width => 100,
+            width => 50,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['hidden' ],
           },
           program_inputs => {
             header => 'program_inputs',
@@ -616,23 +625,11 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          rdbms_table => {
-            header => 'rdbms_table',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
           screen => {
             header => 'screen',
-            #width => 100,
+            width => 50,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          sequential => {
-            header => 'sequential',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['hidden' ],
           },
         },
       },
@@ -646,13 +643,13 @@ __PACKAGE__->config(
         columns      => {
           logical => {
             header => 'logical',
-            #width => 100,
+            width => 120,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           physical => {
             header => 'physical',
-            #width => 100,
+            width => 120,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
@@ -1661,6 +1658,25 @@ __PACKAGE__->config(
           },
         },
       },
+    },
+    virtual_columns =>  {
+    	'Flow' => {
+    		flow_name => {
+    			data_type => "varchar",
+    			is_nullable => 0,
+    			size => 255,
+    			sql => 'SELECT io.name FROM input_output io WHERE io.id = self.output',
+    		}
+    	},
+    	'Printer' => {
+    		printer_name => {
+    			data_type => "varchar",
+    			is_nullable => 0,
+    			size => 100,
+    			sql => 'SELECT io.name FROM input_output io WHERE io.id = self.id',
+    		}
+    	},
+    	
     },
   },
 

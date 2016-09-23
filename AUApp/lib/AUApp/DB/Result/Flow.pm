@@ -79,6 +79,21 @@ __PACKAGE__->set_primary_key("id");
 
 =head1 RELATIONS
 
+=head2 business_rules
+
+Type: has_many
+
+Related object: L<AUApp::DB::Result::BusinessRule>
+
+=cut
+
+__PACKAGE__->has_many(
+  "business_rules",
+  "AUApp::DB::Result::BusinessRule",
+  { "foreign.flow" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
 =head2 fieldtofields
 
 Type: has_many
@@ -160,8 +175,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-09-23 15:13:28
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:i/3NjKtvbDhvnsC+0LjTnw
+# Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-09-23 16:08:46
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:CQNIfixk1k8fwCFrEAT4lw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
