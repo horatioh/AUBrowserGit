@@ -4,7 +4,7 @@
       "U-GROUPINFRA\\gitzelp,S-1-5-21-3641078771-3653456904-245653651-141386"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 7.1001, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Module::Install version 1.16, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -15,8 +15,8 @@
    "name" : "AUApp",
    "no_index" : {
       "directory" : [
-         "t",
-         "inc"
+         "inc",
+         "t"
       ]
    },
    "prereqs" : {
@@ -44,6 +44,11 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ]
+   },
    "version" : "0.01",
    "x_serialization_backend" : "JSON::PP version 2.27300"
 }

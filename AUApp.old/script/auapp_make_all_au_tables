@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+script/auapp_make_AU_schema.pl abstractlibrary
+script/auapp_make_AU_schema.pl dynamiccall
+script/auapp_make_AU_schema.pl fieldtofield
+script/auapp_make_AU_schema.pl flow
+script/auapp_make_AU_schema.pl flow_input
+script/auapp_make_AU_schema.pl indexed_sequential
+script/auapp_make_AU_schema.pl input_output
+script/auapp_make_AU_schema.pl logical_physical
+script/auapp_make_AU_schema.pl measure
+script/auapp_make_AU_schema.pl printer
+script/auapp_make_AU_schema.pl program
+script/auapp_make_AU_schema.pl program_call
+script/auapp_make_AU_schema.pl program_error
+script/auapp_make_AU_schema.pl program_flow
+script/auapp_make_AU_schema.pl program_input
+script/auapp_make_AU_schema.pl program_output
+script/auapp_make_AU_schema.pl program_statement
+script/auapp_make_AU_schema.pl program_using
+script/auapp_make_AU_schema.pl screen
+script/auapp_make_AU_schema.pl step
+script/auapp_make_AU_schema.pl step_argument
+script/auapp_make_AU_schema.pl step_condition
+script/auapp_make_AU_schema.pl token
+script/auapp_make_AU_schema.pl type
+script/auapp_make_AU_schema.pl v_type

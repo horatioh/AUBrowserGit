@@ -101,6 +101,9 @@ __PACKAGE__->config(
     'Plugin::RapidApp::NavCore' => {
       # 
     },
+    'Plugin::RapidApp::RapidDbic' => {
+     dbic_models => ['DB','Auswertung'],
+    },
 
 );
 

@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+script/auapp_create.pl model DB DBIC::Schema  AUApp::DB create=static db_schema=public exclude='\A(ddm|dli_database|hierarchie_all|indices|parameter_registry|programoutputwithoutflow|program_statement|rdbms_table|sequential|step_argument|superdescriptor|working_storage)\z' overwrite_modifications=1 debug=1 'dbi:Pg:dbname=au;host=localhost;port=5432' au Vienna 

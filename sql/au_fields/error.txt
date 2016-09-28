@@ -1,0 +1,2 @@
+psql:dateifeldzuordnung.sql:68: FEHLER:  Tabelle „f_type_r“ existiert nicht
+psql:dateifeldzuordnung.sql:109: FEHLER:  Tabelle „f_type“ existiert nicht

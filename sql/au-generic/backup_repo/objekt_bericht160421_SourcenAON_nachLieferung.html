@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Tabellen Statistiken Bericht</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      body {  font-family: verdana, helvetica, sans-serif; margin: 0px; padding: 0; }
+      h1 { font-weight: bold; font-size: 150%; border-bottom-style: solid; border-bottom-width: 2px; margin-top: 0px; padding-bottom: 0.5ex; color: #eeeeee; overflow: hidden; text-overflow: ellipsis; }
+      h2 { font-size: 130%; padding-bottom: 0.5ex; color: #009ACE; border-bottom-style: solid; border-bottom-width: 2px; }
+      h3 { font-size: 110%; padding-bottom: 0.5ex; color: #000000; }
+      th { text-align: left; background-color: #009ACE; color: #eeeeee; }
+      #ReportHeader { padding: 10px; background-color: #009ACE; color: #eeeeee; border-bottom-style: solid; border-bottom-width: 2px; border-color: #999999; }
+      #ReportHeader th { width: 25%; white-space: nowrap; vertical-align: top; }
+      #ReportHeader td { vertical-align: top; color: #eeeeee; }
+      #ReportNotes { padding: 10px; background-color: #eeeeee; font-size: 80%; border-bottom-style: solid; border-bottom-width: 2px; border-color: #999999; }
+      .ReportSQL { margin-bottom: 10px; padding: 10px; display: block; background-color: #eeeeee; font-family: monospace; }
+      #ReportDetails { margin-left: 10px; margin-right: 10px; margin-bottom: 10px; }
+      #ReportDetails td, th { font-size: 80%; margin-left: 2px; margin-right: 2px; }
+      #ReportDetails th { border-bottom-color: #777777; border-bottom-style: solid; border-bottom-width: 2px; }
+      .ReportDetailsOddDataRow { background-color: #dddddd; }
+      .ReportDetailsEvenDataRow { background-color: #eeeeee; }
+      .ReportTableHeaderCell { background-color: #dddddd; color: #009ACE; vertical-align: top; font-size: 80%; white-space: nowrap; }
+      .ReportTableValueCell { vertical-align: top; font-size: 80%; white-space: nowrap; }
+      .ReportTableInfo { font-size: 80%; font-style: italic; }
+      #ReportFooter { font-weight: bold; font-size: 80%; text-align: right; background-color: #009ACE; color: #eeeeee; margin-top: 10px; padding: 2px; border-bottom-style: solid; border-bottom-width: 2px; border-top-style: solid; border-top-width: 2px; border-color: #999999; }
+      #ReportFooter a { color: #ffffff; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <div id="ReportHeader"><h1>Tabellen Statistiken Bericht</h1><b>Erzeugt: </b>21.04.2016 11:55:33<br /><b>Server: </b>PostgreSQL 9.5 (localhost:5432)<br /><b>Datenbank: </b>au<br /><b>Schema: </b>public<br /></div>
+    <div id="ReportDetails">
+      <h2>Tabellen Statistiken</h2>
+      <div style="overflow:auto;">
+        <table>
+          <tr>
+            <th class="ReportTableHeaderCell" width="6,25%">Tabellenname</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Tupel-Eingefügt</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Tupel-Aktualisiert</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Tupel-Gelöscht</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Tupel-HOT aktualisiert</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Aktive Tupel</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Inaktive Tupel</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Letztes Vacuum</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Letztes Autovacuum</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Letztes Analyze</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Letztes Autoanalyze</th>
+            <th class="ReportTableHeaderCell" width="6,25%">VACUUM Zähler</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Autovacuum Zähler</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Analyse Zähler</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Autoanalyze Zähler</th>
+            <th class="ReportTableHeaderCell" width="6,25%">Größe</th>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">abstractlibrary</td>
+            <td class="ReportTableValueCell">57</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">57</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:53:10.139303+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">48 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">business_rule</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">32 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">comment_io</td>
+            <td class="ReportTableValueCell">96560</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">39934</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 10:18:10.749167+02</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 10:29:11.843869+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell">8152 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">comment_prg</td>
+            <td class="ReportTableValueCell">502871</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">179110</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2016-04-21 10:26:19.620432+02</td>
+            <td class="ReportTableValueCell">2016-04-21 10:18:10.887167+02</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 10:28:12.377979+02</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">40 MB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">ddm</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">8192 bytes</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">dynamiccall</td>
+            <td class="ReportTableValueCell">1403</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1403</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.772976+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">152 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">flow</td>
+            <td class="ReportTableValueCell">10107</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">10114</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.490948+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">776 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">flow_input</td>
+            <td class="ReportTableValueCell">13090</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">13090</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.755974+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">888 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">indexed_sequential</td>
+            <td class="ReportTableValueCell">2920</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2920</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:54:10.198312+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell">216 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">indices</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">24 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">input_output</td>
+            <td class="ReportTableValueCell">4561</td>
+            <td class="ReportTableValueCell">4421</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">4378</td>
+            <td class="ReportTableValueCell">4561</td>
+            <td class="ReportTableValueCell">33</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:53:10.256326+02</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:54:10.247322+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell">976 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">logical_physical</td>
+            <td class="ReportTableValueCell">1021</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1021</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:54:10.265326+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">96 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">measure</td>
+            <td class="ReportTableValueCell">9217</td>
+            <td class="ReportTableValueCell">3</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">3</td>
+            <td class="ReportTableValueCell">9222</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:57:11.922992+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">728 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">parameter_registry</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">48 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">printer</td>
+            <td class="ReportTableValueCell">305</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">305</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:54:10.297332+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell">40 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">program</td>
+            <td class="ReportTableValueCell">7175</td>
+            <td class="ReportTableValueCell">5745</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5193</td>
+            <td class="ReportTableValueCell">7175</td>
+            <td class="ReportTableValueCell">566</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:59:09.939792+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">6</td>
+            <td class="ReportTableValueCell">1688 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">program_call</td>
+            <td class="ReportTableValueCell">28828</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">28835</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.860985+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">4112 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">program_error</td>
+            <td class="ReportTableValueCell">978</td>
+            <td class="ReportTableValueCell">978</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">945</td>
+            <td class="ReportTableValueCell">978</td>
+            <td class="ReportTableValueCell">87</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:54:10.345342+02</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.890988+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">152 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">program_flow</td>
+            <td class="ReportTableValueCell">10107</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">10107</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.918991+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">1104 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">program_input</td>
+            <td class="ReportTableValueCell">19959</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">21</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">19950</td>
+            <td class="ReportTableValueCell">21</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.941993+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">1336 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">program_output</td>
+            <td class="ReportTableValueCell">9010</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">9008</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.961995+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">640 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">program_using</td>
+            <td class="ReportTableValueCell">16282</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">16295</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.802979+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">2224 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">screen</td>
+            <td class="ReportTableValueCell">1336</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">1336</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:54:10.414356+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">2</td>
+            <td class="ReportTableValueCell">104 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">sequential</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">8192 bytes</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">step</td>
+            <td class="ReportTableValueCell">222370</td>
+            <td class="ReportTableValueCell">222370</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">30312</td>
+            <td class="ReportTableValueCell">222118</td>
+            <td class="ReportTableValueCell">8774</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:10.893888+02</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.467946+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">38 MB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">step_argument</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">16 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">step_condition</td>
+            <td class="ReportTableValueCell">78310</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">78310</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:12.048004+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">8176 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">superdescriptor</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">24 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">token</td>
+            <td class="ReportTableValueCell">108541</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">108541</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">2016-04-21 09:58:11.733972+02</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">5</td>
+            <td class="ReportTableValueCell">11 MB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">type</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">24 kB</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">working_storage</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">16 kB</td>
+          </tr>
+        </table>
+      </div>
+      <br />
+    </div>
+    <div id="ReportFooter">
+Bericht erstellt von <a href="http://www.pgadmin.org/">pgAdmin III</a></div>
+    <br />
+  </body>
+</html>

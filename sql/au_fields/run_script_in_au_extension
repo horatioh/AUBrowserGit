@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+psql --host=localhost --username=au "dbname=au options=--search_path=au_extension" -a -f $1 
