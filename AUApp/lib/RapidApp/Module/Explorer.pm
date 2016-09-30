@@ -69,7 +69,7 @@ sub BUILD {
   }
   
    # PG Test Hack to see how modules can be added to application
-#   $DB::single=1;
+   $DB::single=1;
    my $name = 'pgtestnavtree';
    my $class = 'AUApp::Module::PGTestNavtree';
    my $params = {};
