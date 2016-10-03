@@ -85,7 +85,7 @@ sub process { (shift)->approot(@_) }
 #sub approot :Chained :PathPrefix :Args {
 sub approot :Path {
   my ($self, $c, @args) = @_;
-$DB::single=1;
+#$DB::single=1;
   # Handle url string mode:
   if(scalar(@args) == 1 && $args[0] =~ /^\//) {
     my $url = $args[0];
@@ -97,7 +97,7 @@ $DB::single=1;
     
     @args = split(/\//,$url);
   }
-$DB::single=1;  
+#$DB::single=1;  
   $self->dispatch($c, @args);
 }
 

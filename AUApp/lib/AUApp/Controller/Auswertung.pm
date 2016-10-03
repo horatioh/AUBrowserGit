@@ -31,7 +31,7 @@ sub index :Path :Args(0) {
   
 sub field_auswertung :Path {
     my ($self, $c, @args)= @_;
-$DB::single=1;
+#$DB::single=1;
     $c->log->debug("Called AUApp::Controller::Root action field_auswertung");
     # Call run_sql_auswertung in model Auswertung
     $c->model('Auswertung')->run_sql_auswertung($c, @args);

@@ -874,7 +874,7 @@ This method handles a request.
 =cut
 sub Controller {
   my ($self, $c, @args) = @_;
-#$DB::single=1;
+# $DB::single=1;
   $self->prepare_controller(@args);
 
   # dispatch the request to the appropriate handler

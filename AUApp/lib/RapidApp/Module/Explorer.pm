@@ -55,6 +55,15 @@ has 'page_viewer_params', is => 'ro', isa => 'HashRef', lazy => 1, default => su
 sub BUILD {
   my $self = shift;
   $DB::single=1;
+
+ # PG Hack to add Module ScriptTree in navtree
+  push @{$self->navtrees}, {
+    module => 'ScriptTree',
+    class => 'AUApp::Module::ScriptTree',
+    params => {
+    	title => 'Database Scripts'
+    }  	
+  };
   
   my %seen = ();
   for my $cnf (@{$self->navtrees}) {
@@ -67,14 +76,7 @@ sub BUILD {
     Module::Runtime::require_module($class);
     $self->apply_init_modules( $name => { class => $class, params => $params } );
   }
-  
-   # PG Test Hack to see how modules can be added to application
-   $DB::single=1;
-   my $name = 'pgtestnavtree';
-   my $class = 'AUApp::Module::PGTestNavtree';
-   my $params = {};
-   $self->apply_init_modules($name => { class => $class, params => $params } );
-  
+    
   if ($self->dashboard_class) {
     Module::Runtime::require_module($self->dashboard_class);
     $self->apply_init_modules(

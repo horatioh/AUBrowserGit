@@ -52,6 +52,7 @@ __PACKAGE__->config(
         }
       },
       'AuExtensionFieldParameter' => {
+      	grid_class  => 'AUApp::Module::GridBase',
         updatable_colspec   => ['*'],
         creatable_colspec   => ['*'],
         destroyable_relspec => ['*'],
@@ -95,6 +96,7 @@ $DB::single=1;
 	my $connect_user = $self->connect_info->{user};
 	my $connect_password = $self->connect_info->{password};
 	my $schema = $self->connect_info->{schema};
+	my $sql_error = 0;
 	
 	
 	$c->log->debug("Run_sql_script called");
@@ -103,14 +105,38 @@ $DB::single=1;
 	
 	my $dbh = DBI->connect( $connect_dsn, $connect_user , $connect_password, {
         PrintError => 1,
+        RaiseError => 1,
         AutoCommit => 0
   });
     $c->log->debug("SQL Execute:  set search_path to $schema");
-  	$dbh->do("set search_path to $schema") or $c->log->error( $dbh->errstr );
-	foreach my $sql (@sql_list) {
-	  $c->log->debug("SQL Execute:  $sql");
-	  $dbh->do($sql) or $c->log->error( $dbh->errstr );
-	}
+    eval {
+	  	$dbh->do("set search_path to $schema");
+  	};
+## If eval went wrong
+  	if ($@)  {
+  		$c->log->error( $dbh->errstr );
+  		$sql_error = 1;
+  		return 0;
+  	}
+  	$c->log->debug("Processing Script: $script"); 
+  	eval {
+		foreach my $sql (@sql_list) {
+		  $c->log->debug("SQL Execute:  $sql");
+		  $dbh->do($sql);
+		}
+		## Commit after script finished without errors
+		$c->log->debug("Commiting changes to DB");
+		$dbh->commit();
+	};
+## If eval went wrong
+	if ($@)  {
+  		$c->log->error( $dbh->errstr );
+  		$c->log->debug("Rolling Back Transactions!");
+  		$dbh->rollback();
+  		$sql_error = 1;
+  		return 0;
+  	}
+	return 1; 
 }
 
 sub run_sql_auswertung {
