@@ -1,43 +1,43 @@
 
 -- ----------------------------------------------------------------------------------------
--- (1) nicht benutzten dateien
+-- (1) Nicht benutzten Dateien
 -- ----------------------------------------------------------------------------------------
 
-drop   table not_used_input_output;
+drop table if exists not_used_input_output;
 create table not_used_input_output as
 select * from public.input_output 
 where id not in (select input from public.program_input)
 and   id not in (select output from public.program_output);
 
 -- ----------------------------------------------------------------------------------------
--- (2) nur inputs
+-- (2) Nur Inputs ("ECHTE INPUTS")
 -- ----------------------------------------------------------------------------------------
 
-drop   table only_inputs;
+drop table if exists only_inputs;
 create table only_inputs as select * from public.input_output  
 where id in (select input from public.program_input)
 and   id not in (select output from public.program_output);
 
 -- ----------------------------------------------------------------------------------------
--- (3) nur outputs
+-- (3) Nur Outputs ("ECHTE OUTPUTS")
 -- ----------------------------------------------------------------------------------------
 
-drop   table only_outputs;
+drop table if exists only_outputs;
 create table only_outputs as select * from public.input_output  
 where id not in (select input from public.program_input)
 and   id in (select output from public.program_output);
 
 -- ----------------------------------------------------------------------------------------
--- (4) inputs und outputs
+-- (4) Inputs und Outputs
 -- ----------------------------------------------------------------------------------------
 
-drop   table inputs_and_outputs;
+drop table if exists inputs_and_outputs;
 create table inputs_and_outputs as select * from public.input_output  
 where id in (select input from public.program_input)
 and   id in (select output from public.program_output);
 
 -- ----------------------------------------------------------------------------------------
--- (5) check
+-- (5) Check
 -- ----------------------------------------------------------------------------------------
 
 -- check: select count(*) from input_output;

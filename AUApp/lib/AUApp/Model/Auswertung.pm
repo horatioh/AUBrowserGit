@@ -13,13 +13,24 @@ use Moose;
 #use MooseX::Types::LoadableClass qw/LoadableClass/;
 
 	
-has 'fieldtofield_script' => (is => 'rw', isa => 'Str');
-
+has 'dateifeldzuordnung_script' => (is => 'rw', isa => 'Str');
+has 'entry_level_input_script' => (is => 'rw', isa => 'Str');
+has 'entry_level_output_script' => (is => 'rw', isa => 'Str');
+has 'input_feld_2_feld_script' => (is => 'rw', isa => 'Str');
+has 'output_feld_2_feld_script' => (is => 'rw', isa => 'Str');
+has 'inputohneoutput_script' => (is => 'rw', isa => 'Str');
+has 'outputohneinput_script' => (is => 'rw', isa => 'Str');
 
 
 __PACKAGE__->config(
     schema_class => 'AUApp::Auswertung',
-    fieldtofield_script => 'root/sql/au_fields/fieldtofieldzuordnung.sql',
+    dateifeldzuordnung_script => 'root/sql/au_fields/dateifeldzuordnung.sql',
+    entry_level_input_script => 'root/sql/au_fields/entry_level_input.sql',
+    entry_level_output_script => 'root/sql/au_fields/entry_level_output.sql',
+    input_feld_2_feld_script => 'root/sql/au_fields/input_feld_2_feld_hierarchie.sql',
+    output_feld_2_feld_script => 'root/sql/au_fields/output_feld_2_feld_hierarchie.sql',
+    inputohneoutput_script => 'root/sql/au_fields/inputohneoutput.sql',
+    outputohneinput_script => 'root/sql/au_fields/outputohneinput.sql',
     connect_info => {
         dsn => 'dbi:Pg:dbname=au;host=localhost;port=5432',
         user => 'au',
@@ -139,14 +150,62 @@ $DB::single=1;
 	return 1; 
 }
 
-sub run_sql_auswertung {
+sub run_sql_dateifeldzuordnung {
 	my ($self, $c, $script)= @_;
-	my $script = $self->fieldtofield_script;
+	my $script = $self->dateifeldzuordnung_script;
 	my $pwd = `pwd`;
 	
-	$c->log->debug("Run_sql_auswertung called with Pwd: $pwd script: $script");
+	$c->log->debug("Run_sql_dateifeldzuordnung called with Pwd: $pwd script: $script");
+	$self->run_sql_script($c, $script);
+}
+sub run_sql_entry_level_input {
+	my ($self, $c, $script)= @_;
+	my $script = $self->entry_level_input_script;
+	my $pwd = `pwd`;
+	
+	$c->log->debug("Run_sql_entry_level_input called with Pwd: $pwd script: $script");
+	$self->run_sql_script($c, $script);
+}
+sub run_sql_entry_level_output {
+	my ($self, $c, $script)= @_;
+	my $script = $self->entry_level_output_script;
+	my $pwd = `pwd`;
+	
+	$c->log->debug("Run_sql_entry_level_output called with Pwd: $pwd script: $script");
+	$self->run_sql_script($c, $script);
+}
+sub run_sql_input_feld_2_feld {
+	my ($self, $c, $script)= @_;
+	my $script = $self->input_feld_2_feld_script;
+	my $pwd = `pwd`;
+	
+	$c->log->debug("Run_sql_input_feld_2_feld called with Pwd: $pwd script: $script");
 	$self->run_sql_script($c, $script);
 }
 no Moose;
+sub run_sql_output_feld_2_feld {
+	my ($self, $c, $script)= @_;
+	my $script = $self->output_feld_2_feld_script;
+	my $pwd = `pwd`;
+	
+	$c->log->debug("Run_sql_output_feld_2_feld called with Pwd: $pwd script: $script");
+	$self->run_sql_script($c, $script);
+}
+sub run_sql_inputohneoutput {
+	my ($self, $c, $script)= @_;
+	my $script = $self->inputohneoutput_script;
+	my $pwd = `pwd`;
+	
+	$c->log->debug("Run_sql_inputohneoutput called with Pwd: $pwd script: $script");
+	$self->run_sql_script($c, $script);
+}
+sub run_sql_outputohneinput {
+	my ($self, $c, $script)= @_;
+	my $script = $self->outputohneinput_script;
+	my $pwd = `pwd`;
+	
+	$c->log->debug("Run_sql_outputohneinput called with Pwd: $pwd script: $script");
+	$self->run_sql_script($c, $script);
+}
 __PACKAGE__->meta->make_immutable;	
 1;

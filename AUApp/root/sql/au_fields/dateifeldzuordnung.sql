@@ -1,17 +1,17 @@
 --
 -- ----------------------------------------------------------------------------------------
--- (1) aufbau der zwischentabelle f_input_output 
+-- (1) Aufbau der Zwischentabelle f_input_output 
 -- ----------------------------------------------------------------------------------------
 --
-drop table f_input_output;
+drop table if exists f_input_output;
 --
 create table f_input_output as
 select 
- cast(io.id      as int)           as "io_id" ,
- cast(io.name    as varchar(10))   as "io_name" ,
- cast(io.io_type as varchar(10))   as "io_iotype" ,
- cast(io.record  as bigint)        as "io_recordid" ,
- cast(io.uri     as varchar(100))  as "io_uri" 
+ CAST(io.id      AS INT)           as "io_id" ,
+ CAST(io.name    AS VARCHAR(10))   as "io_name" ,
+ CAST(io.io_type AS VARCHAR(10))   as "io_iotype" ,
+ CAST(io.record  AS BIGINT)        as "io_recordid" ,
+ CAST(io.uri     AS VARCHAR(100))  as "io_uri" 
 from
  public.input_output io
 where io.id not in (select id from not_used_input_output)
@@ -20,10 +20,10 @@ where io.id not in (select id from not_used_input_output)
 -- check: select * from f_input_output;
 --
 -- ----------------------------------------------------------------------------------------
--- (2) aufbau der zwischen-tabelle f_type_d
+-- (2) Aufbau der Zwischen-Tabelle f_type_d
 -- ----------------------------------------------------------------------------------------
 --
-drop table f_type_d;
+drop table if exists f_type_d;
 --
 create table f_type_d as
 --
@@ -55,19 +55,19 @@ select
 --
 from f_input_output fio, public.type f
 --
-where fio."io_recordid" = f.id;
+where fio."io_recordid" = f.id
+and f.parent is null;
 --
 update f_type_d set ("d_succession" , "d_parent" ,"r_succession" , "r_parent" ,"f_succession" , "f_parent" ) = (-1 , -1 , -1 , -1 , -1 , -1  );
 --
--- check: select * from f_type_d order by "d_name" , "d_parent" , "d_succession" , "r_parent" , "r_id" , "r_succession" , "f_parent" , "f_id" , "f_succession";
+-- check: select * from f_type_d order by "d_name" , "d_parent" , "d_succession" , "r_parent" , "r_name" , "r_succession" , "f_parent" , "f_name" , "f_succession";
 
 -- ----------------------------------------------------------------------------------------
--- (3) aufbau der zwischen-tabelle f_type_r
+-- (3) Aufbau der Zwischen-Tabelle f_type_r
 -- ----------------------------------------------------------------------------------------
 --
-drop table f_type_r;
---
-create table f_type_r as
+drop table if exists f_type_rz;
+create table f_type_rz as
 --
 select 
 --
@@ -95,18 +95,77 @@ select
 --
   ftd."io_uri"
 --
-from f_type_d ftd , public.type t 
---
-where t.parent = ftd."d_recordid"
+from 
+ f_type_d ftd left outer join public.type t on (t.parent = ftd."d_recordid" )
 order by "d_name" , "d_parent" , "d_succession" , "r_parent" , "r_id" , "r_succession" , "f_parent" , "f_id" , "f_succession";
+--
+update f_type_rz set (r_id, r_name, r_type , r_succession, r_precision) = (d_recordid,  d_name, null, 0, null) where r_type is not null;
+--
+drop table if exists f_type_r;
+--
+create table f_type_r as
+--
+select 
+--
+  ft."d_id" , 
+  ft."d_name" , 
+  ft."d_type" , 
+  ft."d_recordid" , 
+  ft."d_parent" ,
+  ft."d_succession" ,
+  ft."d_precision", 
+--
+  ft."r_id" ,
+  ft."r_name" ,
+  ft."r_type" ,
+  ft."r_parent" ,
+  ft."r_succession",
+  ft."r_precision" ,
+--
+  ft."f_id" ,
+  ft."f_name" ,
+  ft."f_type",
+  ft."f_parent",
+  ft."f_succession",
+  ft."f_precision" ,
+--
+  ft."io_uri"
+from
+ f_type_rz ft
+group by
+--
+  ft."d_id" , 
+  ft."d_name" , 
+  ft."d_type" , 
+  ft."d_recordid" , 
+  ft."d_parent" ,
+  ft."d_succession" ,
+  ft."d_precision", 
+--
+  ft."r_id" ,
+  ft."r_name" ,
+  ft."r_type" ,
+  ft."r_parent" ,
+  ft."r_succession",
+  ft."r_precision" ,
+--
+  ft."f_id" ,
+  ft."f_name" ,
+  ft."f_type",
+  ft."f_parent",
+  ft."f_succession",
+  ft."f_precision" ,
+--
+  ft."io_uri"
+order by 1,4,8,14;
 
 -- check: select * from f_type_r order by "d_name" , "d_parent" , "d_succession" , "r_parent" , "r_id" , "r_succession" , "f_parent" , "f_id" , "f_succession";
 
 -- ----------------------------------------------------------------------------------------
--- (4) aufbau der zwischen-tabelle f_type
+-- (4) Aufbau der Zwischen-Tabelle f_type
 -- ----------------------------------------------------------------------------------------
 
-drop table f_type;
+drop table if exists f_type;
 --
 create table f_type as
 --
@@ -127,12 +186,12 @@ select
   ftr."r_succession",
   ftr."r_precision" ,
 --
-  t.id                             as "f_id" ,
-  t.name                           as "f_name" ,
-  t.parent                         as "f_type",
-  t.succession                     as "f_parent",
-  t.type                           as "f_succession",
-  t.precision                      as "f_precision" , 
+  t.id                as "f_id" ,
+  t.name              as "f_name" ,
+  t.type              as "f_type",
+  t.parent            as "f_parent",
+  t.succession        as "f_succession",
+  t.precision         as "f_precision" , 
 --
   ftr."io_uri"
 --
