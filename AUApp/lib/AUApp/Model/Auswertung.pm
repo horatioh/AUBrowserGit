@@ -62,13 +62,55 @@ __PACKAGE__->config(
           }
         }
       },
-      'AuExtensionFieldParameter' => {
+      ## Parameter Table - Allow CRUD
+      'AuExtensionFInputDatei' => {
       	grid_class  => 'AUApp::Module::GridBase',
         updatable_colspec   => ['*'],
         creatable_colspec   => ['*'],
         destroyable_relspec => ['*'],
       	
       },
+      ## Parameter Table - Allow CRUD
+      'AuExtensionFInputRecord' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        updatable_colspec   => ['*'],
+        creatable_colspec   => ['*'],
+        destroyable_relspec => ['*'],
+      	
+      },
+      ## Parameter Table - Allow CRUD
+      'AuExtensionFInputFeld' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        updatable_colspec   => ['*'],
+        creatable_colspec   => ['*'],
+        destroyable_relspec => ['*'],
+      	
+      },
+      ## Parameter Table - Allow CRUD
+      'AuExtensionFOutputDatei' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        updatable_colspec   => ['*'],
+        creatable_colspec   => ['*'],
+        destroyable_relspec => ['*'],
+      	
+      },
+      ## Parameter Table - Allow CRUD
+      'AuExtensionFOutputRecord' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        updatable_colspec   => ['*'],
+        creatable_colspec   => ['*'],
+        destroyable_relspec => ['*'],
+      	
+      },
+      ## Parameter Table - Allow CRUD
+      'AuExtensionFOutputFeld' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        updatable_colspec   => ['*'],
+        creatable_colspec   => ['*'],
+        destroyable_relspec => ['*'],
+      	
+      },
+      
     },
     TableSpecs => {
       'AuExtensionEntryLevel' => {
@@ -549,8 +591,8 @@ __PACKAGE__->config(
 
       'AuExtensionFInputDatei' => {
 #        display_column => 'name',
-        title          => 'Auswertung Datei',
-        title_multi    => 'Auswertung Dateien',
+        title          => 'F Input Datei',
+        title_multi    => 'F Input Dateien',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -567,8 +609,8 @@ __PACKAGE__->config(
 
       'AuExtensionFInputFeld' => {
 #        display_column => 'name',
-        title          => 'Auswertung Feld',
-        title_multi    => 'Auswertung Feld',
+        title          => 'F Input Feld',
+        title_multi    => 'F Input Feld',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -585,8 +627,8 @@ __PACKAGE__->config(
 
       'AuExtensionFInputFelder' => {
 #        display_column => 'name',
-        title          => 'Auswertung Felder',
-        title_multi    => 'Auswertung Felder',
+        title          => 'Analyse Input Felder',
+        title_multi    => 'Analyse Input Felder',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -778,8 +820,8 @@ __PACKAGE__->config(
 
       'AuExtensionFInputOutput' => {
 #        display_column => 'name',
-        title          => 'F Input Output',
-        title_multi    => 'F Input Outputs',
+        title          => 'Input Output',
+        title_multi    => 'Input Outputs',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -874,8 +916,8 @@ __PACKAGE__->config(
 
       'AuExtensionFOutputFelder' => {
 #        display_column => 'name',
-        title          => 'F Output Felder',
-        title_multi    => 'F Output Felder',
+        title          => 'Analyse Output Felder',
+        title_multi    => 'Analyse Output Felder',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
