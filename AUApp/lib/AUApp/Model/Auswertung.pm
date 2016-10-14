@@ -70,8 +70,1457 @@ __PACKAGE__->config(
       	
       },
     },
-  },
-);
+    TableSpecs => {
+      'AuExtensionEntryLevel' => {
+#        display_column => 'name',
+        title          => 'Entry Level',
+        title_multi    => 'Entry Levels',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          input_feld_id => {
+            header => 'inputfeld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_id => {
+            header => 'datei id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_name => {
+            header => 'datei name',
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_type => {
+            header => 'datei type',
+            #no_column => 1,
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_recordid => {
+            header => 'datei recordid',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_parent => {
+            header => 'datei parent',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_succession => {
+            header => 'datei succession',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_precision => {
+            header => 'datei precision',
+            width => 100,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_id => {
+            header => 'record id',
+            width => 80,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_name => {
+            header => 'record name',
+            width => 100,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_type => {
+            header => 'record type',
+            width => 100,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_parent => {
+            header => 'record parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_succession => {
+            header => 'record succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_precision => {
+            header => 'record precision',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_id => {
+            header => 'field id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_name => {
+            header => 'field name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_type => {
+            header => 'field type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_parent => {
+            header => 'field parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_succession => {
+            header => 'field succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_precision => {
+            header => 'field precision',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_uri => {
+            header => 'source uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },           
+### 
+          }, ### End of Columns
+        }, ### End of Table
+        
+      'AuExtensionEntryLevelOutput' => {
+#        display_column => 'name',
+        title          => 'Entry Level Output',
+        title_multi    => 'Entry Level Outputs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          output_feld_id => {
+            header => 'outputfeld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_id => {
+            header => 'datei id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_name => {
+            header => 'datei name',
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_type => {
+            header => 'datei type',
+            #no_column => 1,
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_recordid => {
+            header => 'datei recordid',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_parent => {
+            header => 'datei parent',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_succession => {
+            header => 'datei succession',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_precision => {
+            header => 'datei precision',
+            width => 100,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_id => {
+            header => 'record id',
+            width => 80,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_name => {
+            header => 'record name',
+            width => 100,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_type => {
+            header => 'record type',
+            width => 100,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_parent => {
+            header => 'record parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_succession => {
+            header => 'record succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_precision => {
+            header => 'record precision',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_id => {
+            header => 'field id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_name => {
+            header => 'field name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_type => {
+            header => 'field type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_parent => {
+            header => 'field parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_succession => {
+            header => 'field succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_precision => {
+            header => 'field precision',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_uri => {
+            header => 'source uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },           
+### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionExcludePgm' => {
+#        display_column => 'name',
+        title          => 'Exclude Program',
+        title_multi    => 'Exclude Programs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'program id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFFieldtofieldOutputResult' => {
+#        display_column => 'name',
+        title          => 'Field to Field Output Result',
+        title_multi    => 'Field to Field Output Results',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          level => {
+            header => 'level',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          output_feld_id => {
+            header => 'output feld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          output_feld_name => {
+            header => 'output feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          program_name => {
+            header => 'program name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          flow_id => {
+            header => 'flow id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_id => {
+            header => 'input id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_file_name => {
+            header => 'input file name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          source_id => {
+            header => 'source id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          source_feld_name => {
+            header => 'source feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          target_id => {
+            header => 'target id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          target_feld_name => {
+            header => 'target feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFFieldtofieldResult' => {
+#        display_column => 'name',
+        title          => 'Field to Field Result',
+        title_multi    => 'Field to Field Results',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          level => {
+            header => 'level',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_feld_id => {
+            header => 'input feld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_feld_name => {
+            header => 'input feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          program_name => {
+            header => 'program name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          flow_id => {
+            header => 'flow id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_id => {
+            header => 'input id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_file_name => {
+            header => 'input file name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          source_id => {
+            header => 'source id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          source_feld_name => {
+            header => 'source feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          target_id => {
+            header => 'target id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          target_feld_name => {
+            header => 'target feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFInputDatei' => {
+#        display_column => 'name',
+        title          => 'Auswertung Datei',
+        title_multi    => 'Auswertung Dateien',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'inputoutput id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFInputFeld' => {
+#        display_column => 'name',
+        title          => 'Auswertung Feld',
+        title_multi    => 'Auswertung Feld',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'Feld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFInputFelder' => {
+#        display_column => 'name',
+        title          => 'Auswertung Felder',
+        title_multi    => 'Auswertung Felder',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'Felder id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFInputOhneOutput' => {
+#        display_column => 'name',
+        title          => 'Input ohne Output',
+        title_multi    => 'Input ohne Outputs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          input_feld_id => {
+            header => 'inputfeld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_id => {
+            header => 'datei id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_name => {
+            header => 'datei name',
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_type => {
+            header => 'datei type',
+            #no_column => 1,
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_recordid => {
+            header => 'datei recordid',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_parent => {
+            header => 'datei parent',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_succession => {
+            header => 'datei succession',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_precision => {
+            header => 'datei precision',
+            width => 100,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_id => {
+            header => 'record id',
+            width => 80,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_name => {
+            header => 'record name',
+            width => 100,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_type => {
+            header => 'record type',
+            width => 100,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_parent => {
+            header => 'record parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_succession => {
+            header => 'record succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_precision => {
+            header => 'record precision',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_id => {
+            header => 'field id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_name => {
+            header => 'field name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_type => {
+            header => 'field type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_parent => {
+            header => 'field parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_succession => {
+            header => 'field succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_precision => {
+            header => 'field precision',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_uri => {
+            header => 'source uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          }, 
+          l1_flow_id => {
+            header => 'l1_flow_id',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          l1_input_id => {
+            header => 'l1_input_id',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          l1_source_id => {
+            header => 'l1_source_id',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          l1_target_id => {
+            header => 'l1_target_id',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },                    
+### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFInputOutput' => {
+#        display_column => 'name',
+        title          => 'F Input Output',
+        title_multi    => 'F Input Outputs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          io_id => {
+            header => 'IO id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_name => {
+            header => 'IO name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_iotype => {
+            header => 'IO type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_recordid => {
+            header => 'IO recordid',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_uri => {
+            header => 'IO uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },          
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFInputRecord' => {
+#        display_column => 'name',
+        title          => 'F Input Record',
+        title_multi    => 'F Input Records',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'Input Record id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFOutputDatei' => {
+#        display_column => 'name',
+        title          => 'F Output Datei',
+        title_multi    => 'F Output Dateien',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'Output Datei id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFOutputFeld' => {
+#        display_column => 'name',
+        title          => 'F Output Feld',
+        title_multi    => 'F Output Feld',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'Output Feld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFOutputFelder' => {
+#        display_column => 'name',
+        title          => 'F Output Felder',
+        title_multi    => 'F Output Felder',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'Output Felder id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFOutputOhneIntput' => {
+#        display_column => 'name',
+        title          => 'Output ohne Input',
+        title_multi    => 'Output ohne Inputs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          output_feld_id => {
+            header => 'inputfeld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_id => {
+            header => 'datei id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_name => {
+            header => 'datei name',
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_type => {
+            header => 'datei type',
+            #no_column => 1,
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_recordid => {
+            header => 'datei recordid',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_parent => {
+            header => 'datei parent',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_succession => {
+            header => 'datei succession',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_precision => {
+            header => 'datei precision',
+            width => 100,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_id => {
+            header => 'record id',
+            width => 80,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_name => {
+            header => 'record name',
+            width => 100,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_type => {
+            header => 'record type',
+            width => 100,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_parent => {
+            header => 'record parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_succession => {
+            header => 'record succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_precision => {
+            header => 'record precision',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_id => {
+            header => 'field id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_name => {
+            header => 'field name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_type => {
+            header => 'field type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_parent => {
+            header => 'field parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_succession => {
+            header => 'field succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_precision => {
+            header => 'field precision',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_uri => {
+            header => 'source uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          }, 
+          l1_flow_id => {
+            header => 'l1_flow_id',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          l1_input_id => {
+            header => 'l1_input_id',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          l1_source_id => {
+            header => 'l1_source_id',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          l1_target_id => {
+            header => 'l1_target_id',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },                    
+### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFOutputRecord' => {
+#        display_column => 'name',
+        title          => 'F Output Record',
+        title_multi    => 'F Output Records',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          id => {
+            header => 'Output Record id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionFType' => {
+#        display_column => 'name',
+        title          => 'F Type',
+        title_multi    => 'F Types',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          d_id => {
+            header => 'datei id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_name => {
+            header => 'datei name',
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_type => {
+            header => 'datei type',
+            #no_column => 1,
+            width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_recordid => {
+            header => 'datei recordid',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_parent => {
+            header => 'datei parent',
+            no_column => 1,
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_succession => {
+            header => 'datei succession',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          d_precision => {
+            header => 'datei precision',
+            width => 100,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_id => {
+            header => 'record id',
+            width => 80,
+            no_column => 1,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_name => {
+            header => 'record name',
+            width => 100,
+            #sortable => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_type => {
+            header => 'record type',
+            width => 100,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_parent => {
+            header => 'record parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_succession => {
+            header => 'record succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          r_precision => {
+            header => 'record precision',
+            width => 50,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_id => {
+            header => 'field id',
+            width => 80,
+            no_column => 1,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_name => {
+            header => 'field name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_type => {
+            header => 'field type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_parent => {
+            header => 'field parent',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_succession => {
+            header => 'field succession',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          f_precision => {
+            header => 'field precision',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          io_uri => {
+            header => 'source uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          }, 
+### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionInputAndOutputs' => {
+#        display_column => 'name',
+        title          => 'Input und Output',
+        title_multi    => 'Input und Outputs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          io_type => {
+            header => 'io_type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          id => {
+            header => 'id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          name => {
+            header => 'name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          uri => {
+            header => 'uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },          
+           version => {
+            header => 'version',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           library => {
+            header => 'library',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           measure => {
+            header => 'measure',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+            record => {
+            header => 'record',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ 
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionLAll' => {
+#        display_column => 'name',
+        title          => 'L All',
+        title_multi    => 'L All',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          level => {
+            header => 'level',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          output_feld_id => {
+            header => 'output feld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          flow_id => {
+            header => 'flow id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_id => {
+            header => 'input id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },          
+           source_id => {
+            header => 'source id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           target_id => {
+            header => 'target id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+      'AuExtensionNotUsedInputOutput' => {
+#        display_column => 'name',
+        title          => 'Not used InputOutput',
+        title_multi    => 'Not used InputOutputs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          io_type => {
+            header => 'io_type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          id => {
+            header => 'id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          name => {
+            header => 'name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          uri => {
+            header => 'uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },          
+           version => {
+            header => 'version',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           library => {
+            header => 'library',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           measure => {
+            header => 'measure',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+            record => {
+            header => 'record',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+
+          }, ### End of Columns
+        }, ### End of Table
+ 
+       'AuExtensionOnlyInput' => {
+#        display_column => 'name',
+        title          => 'Only Input',
+        title_multi    => 'Only Inputs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          io_type => {
+            header => 'io_type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          id => {
+            header => 'id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          name => {
+            header => 'name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          uri => {
+            header => 'uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },          
+           version => {
+            header => 'version',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           library => {
+            header => 'library',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           measure => {
+            header => 'measure',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+            record => {
+            header => 'record',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+       'AuExtensionOnlyOutput' => {
+#        display_column => 'name',
+        title          => 'Only Output',
+        title_multi    => 'Only Outputs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          io_type => {
+            header => 'io_type',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          id => {
+            header => 'id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          name => {
+            header => 'name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          uri => {
+            header => 'uri',
+            width => 500,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },          
+           version => {
+            header => 'version',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           library => {
+            header => 'library',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+           measure => {
+            header => 'measure',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+            record => {
+            header => 'record',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
+        
+      }, ### End of TableSpecs  
+  }, ### End of RapidDbic
+); ### End of Config
 
 =head1 NAME
 

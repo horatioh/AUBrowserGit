@@ -8,6 +8,7 @@ use namespace::autoclean;
 BEGIN { extends 'Catalyst::Controller', 'RapidApp::ModuleDispatcher'; }
 
 use RapidApp::Util qw(:all);
+use Data::Dumper;
 
 =head1 NAME
 
@@ -97,7 +98,11 @@ sub approot :Path {
     
     @args = split(/\//,$url);
   }
-#$DB::single=1;  
+$DB::single=1; 
+  my $cnt = $c->controller('AUApp::Controller::Assets::Local::Misc');
+  $c->debug("Controller for AUApp::Controller::Assets::Local::Misc is: " . Dumper($cnt));
+  my $ap = $cnt->asset_path('static/dateifeldzuordnung.txt') if $cnt;
+  $c->debug("Asset Path to static/dateifeldzuordnung.txt is: " . Dumper($ap));
   $self->dispatch($c, @args);
 }
 

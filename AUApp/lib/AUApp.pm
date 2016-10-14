@@ -104,6 +104,16 @@ __PACKAGE__->config(
     'Plugin::RapidApp::RapidDbic' => {
      dbic_models => ['DB','Auswertung'],
     },
+   'Plugin::AutoAssets' => {
+    	assets => [
+    	{
+    		controller => 'AUApp::Controller::Assets::AuSrcDir',
+    		type => 'Directory',
+    		include => '/home/gitzelp/aon/src_all',
+    		allow_static_requests => 1,
+    		persist_state => 1,
+    	} ]
+    }
 
 );
 

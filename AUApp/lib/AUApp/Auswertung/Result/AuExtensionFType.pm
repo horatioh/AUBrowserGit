@@ -120,19 +120,19 @@ __PACKAGE__->table("au_extension.f_type");
 
 =head2 f_type
 
-  data_type: 'bigint'
+  data_type: 'varchar'
   is_nullable: 1
+  size: 255
 
 =head2 f_parent
 
-  data_type: 'integer'
+  data_type: 'bigint'
   is_nullable: 1
 
 =head2 f_succession
 
-  data_type: 'varchar'
+  data_type: 'integer'
   is_nullable: 1
-  size: 255
 
 =head2 f_precision
 
@@ -179,11 +179,11 @@ __PACKAGE__->add_columns(
   "f_name",
   { data_type => "varchar", is_nullable => 1, size => 255 },
   "f_type",
-  { data_type => "bigint", is_nullable => 1 },
-  "f_parent",
-  { data_type => "integer", is_nullable => 1 },
-  "f_succession",
   { data_type => "varchar", is_nullable => 1, size => 255 },
+  "f_parent",
+  { data_type => "bigint", is_nullable => 1 },
+  "f_succession",
+  { data_type => "integer", is_nullable => 1 },
   "f_precision",
   { data_type => "integer", is_nullable => 1 },
   "io_uri",
@@ -191,8 +191,8 @@ __PACKAGE__->add_columns(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-09-28 16:45:43
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:x/WAvZEWkoN3m1aMrma4yw
+# Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-10-04 14:48:19
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:dMZar2yOMld9pft5NZp/yw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
