@@ -50,6 +50,14 @@ __PACKAGE__->config(
       'ProgramOutput' => {
       	include_colspec => ['*', 'program.program_flows', 'program.program_inputs']
       },
+      'Program' => {
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      },
+      'AllCall' => {
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      },
+
+      
  #     'Flow' => {
  #     	include_colspec => ['*', 'output.name']
  #     }
