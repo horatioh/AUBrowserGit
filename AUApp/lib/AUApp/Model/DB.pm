@@ -53,7 +53,7 @@ __PACKAGE__->config(
       'Program' => {
         page_class  => 'AUApp::Module::UriDbicPropPage',
       },
-      'AllCall' => {
+      'InputOutput' => {
         page_class  => 'AUApp::Module::UriDbicPropPage',
       },
 

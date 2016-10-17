@@ -61,7 +61,8 @@ sub BUILD {
 sub Controller {
   my ($self, $c, @args) = @_;
   my $Row = $self->req_Row or return;
-  my $uri = $Row->{_column_data}->{uri};
+  # Dirty quick hack. Todo: Define more generic field attribute as selection criteria for field to be an URI
+  my $uri = $Row->{_column_data}->{uri} || $Row->{_column_data}->{io_uri};
 
   # if actual tab includes an URI column then replace URIFile path by URI path for the asset URI is pointing to
   if ($uri)  {

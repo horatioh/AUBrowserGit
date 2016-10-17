@@ -110,6 +110,67 @@ __PACKAGE__->config(
         destroyable_relspec => ['*'],
       	
       },
+      ## Enable URIDbicPropPage as page class
+      'AuExtensionEntryLevel' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+      ## Enable URIDbicPropPage as page class
+      'AuExtensionEntryLevelOutput' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+       ## Enable URIDbicPropPage as page class
+      'AuExtensionFInputOhneOutput' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+       ## Enable URIDbicPropPage as page class
+      'AuExtensionFInputOutput' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+       ## Enable URIDbicPropPage as page class
+      'AuExtensionFOutputOhneIntput' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+       ## Enable URIDbicPropPage as page class
+      'AuExtensionFType' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+       ## Enable URIDbicPropPage as page class
+      'AuExtensionInputAndOutputs' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+       ## Enable URIDbicPropPage as page class
+      'AuExtensionNotUsedInputOutput' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+       ## Enable URIDbicPropPage as page class
+      'AuExtensionOnlyInput' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+       ## Enable URIDbicPropPage as page class
+      'AuExtensionOnlyOutput' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        page_class  => 'AUApp::Module::UriDbicPropPage',
+      	
+      },
+      
       
     },
     TableSpecs => {
