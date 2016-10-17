@@ -68,7 +68,6 @@ __PACKAGE__->config(
         updatable_colspec   => ['*'],
         creatable_colspec   => ['*'],
         destroyable_relspec => ['*'],
-        include_colspec => ['*', 'id.name']
       	
       },
       ## Parameter Table - Allow CRUD
@@ -1620,131 +1619,6 @@ __PACKAGE__->config(
  ### 
           }, ### End of Columns
         }, ### End of Table
-
-      'AUExtensionVInputOutput' => {
-        display_column => 'name',
-        title          => 'V InputOutput',
-        title_multi    => 'V InputOutputs',
-        iconCls        => 'ra-icon-pg',
-        multiIconCls   => 'ra-icon-pg-multi',
-        columns        => {
-          io_type => {
-            header => 'io_type',
-            width => 50,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          id => {
-            header => 'id',
-            width => 50,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          name => {
-            header => 'name',
-            width => 80,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          uri => {
-            header => 'uri',
-            width => 400,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          version => {
-            header => 'version',
-            width => 50,
-            #renderer => 'RA.ux.App.someJsFunc',
-            profiles => ['hidden' ],
-          },
-          library => {
-            header => 'library',
-            width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          measure => {
-            header => 'measure',
-            width => 50,
-            #renderer => 'RA.ux.App.someJsFunc',
-            profiles => ['hidden' ],
-          },
-          record => {
-            header => 'record',
-            width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-           fieldtofields => {
-            header => 'fieldtofields',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          flow_inputs => {
-            header => 'flow_inputs',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          flows => {
-            header => 'flows',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          indexed_sequential => {
-            header => 'indexed_sequential',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          logical_physical_logicals => {
-            header => 'logical_physical_logicals',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          logical_physical_physicals => {
-            header => 'logical_physical_physicals',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          printer => {
-            header => 'printer',
-            width => 50,
-            #renderer => 'RA.ux.App.someJsFunc',
-            profiles => ['hidden' ],
-          },
-          program_inputs => {
-            header => 'program_inputs',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          program_outputs => {
-            header => 'program_outputs',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          screen => {
-            header => 'screen',
-            width => 50,
-            #renderer => 'RA.ux.App.someJsFunc',
-            profiles => ['hidden' ],
-          },
-        }, ### End of Columns
-      }, ### End of Table
 
         
       }, ### End of TableSpecs  

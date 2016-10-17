@@ -51,13 +51,13 @@ __PACKAGE__->add_columns("id", { data_type => "bigint", is_nullable => 1 });
 # Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-10-04 14:48:18
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:0qI0h1MQGsk+SvH4gS/zGQ
 
-#__PACKAGE__->add_columns("id", { data_type => "bigint", is_foreign_key => 1, is_nullable => 1 });
-#__PACKAGE__->belongs_to(
-#  "input",
-#  "AUApp::DB::Result::InputOutput",
-#  { id => "input" },
-#  { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
-#);
+__PACKAGE__->add_columns("id", { data_type => "bigint", is_foreign_key => 1, is_nullable => 1 });
+__PACKAGE__->belongs_to(
+  "id" ,
+  "AUApp::Auswertung::Result::AuExtensionVInputOutput",
+  { 'foreign.id' => 'self.id' },
+  { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
+);
 
 
 
