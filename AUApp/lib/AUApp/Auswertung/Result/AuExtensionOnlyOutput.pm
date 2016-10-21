@@ -105,6 +105,20 @@ __PACKAGE__->add_columns(
 
 # Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-10-04 14:48:19
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:YIZFcfpAnVYwb7N6gc51GQ
+__PACKAGE__->add_columns("record", { data_type => "bigint", is_foreign_key => 1, is_nullable => 1 });
+__PACKAGE__->belongs_to(
+  "record" ,
+  "AUApp::Auswertung::Result::AuExtensionVType",
+  { 'foreign.id' => 'self.record' },
+  { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
+);
+
+__PACKAGE__->has_many(
+  "fields",
+  "AUApp::Auswertung::Result::AuExtensionVType",
+  { "foreign.parent" => "self.record" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

@@ -84,7 +84,6 @@ sub Controller {
 	  $c->request->path($forward_uri);
 	  $c->dispatcher->prepare_action($c);
 	  $c->go($c->action, $c->request->args);
-	
 	  }
   # if no uri column in actual tab do standard processing
   else {

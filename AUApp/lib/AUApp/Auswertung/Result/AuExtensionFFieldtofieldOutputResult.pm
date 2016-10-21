@@ -128,7 +128,42 @@ __PACKAGE__->add_columns(
 
 # Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-10-04 14:48:18
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:q3vARj+AmF7dr6hBtEa62w
+my @cols = qw/level flow_id source_id target_id/;
+__PACKAGE__->set_primary_key( @cols);
+__PACKAGE__->has_many(
+  "target2source",
+  "AUApp::Auswertung::Result::AuExtensionFFieldtofieldOutputResult",
+  { 
+  	"foreign.source_id" => "self.target_id",
+#  	"foreign.level" => "self.level + 1",
+#  },
+#  { cascade_copy => 0, cascade_delete => 0 },
 
+#    sub {
+#      my $args = shift;
+#      return {
+#        "$args->{foreign_alias}.source_id" => { -ident => "$args->{self_alias}.target_id" },
+#        "$args->{foreign_alias}.year"   => { '>', "1979", '<', "1990" },
+#      };
+    },
+);
+__PACKAGE__->has_many(
+  "source2target",
+  "AUApp::Auswertung::Result::AuExtensionFFieldtofieldOutputResult",
+  { 
+  	"foreign.target_id" => "self.source_id",
+#  	"foreign.level" => "self.level + 1",
+#  },
+#  { cascade_copy => 0, cascade_delete => 0 },
+
+#    sub {
+#      my $args = shift;
+#      return {
+#        "$args->{foreign_alias}.source_id" => { -ident => "$args->{self_alias}.target_id" },
+#        "$args->{foreign_alias}.year"   => { '>', "1979", '<', "1990" },
+#      };
+    },
+);
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;

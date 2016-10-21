@@ -855,24 +855,28 @@ __PACKAGE__->config(
           l1_flow_id => {
             header => 'l1_flow_id',
             width => 50,
+            no_column => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           l1_input_id => {
             header => 'l1_input_id',
             width => 50,
+            no_column => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           l1_source_id => {
             header => 'l1_source_id',
             width => 50,
+            no_column => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           l1_target_id => {
             header => 'l1_target_id',
             width => 50,
+            no_column => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },                    
@@ -882,8 +886,8 @@ __PACKAGE__->config(
 
       'AuExtensionFInputOutput' => {
 #        display_column => 'name',
-        title          => 'Input Output',
-        title_multi    => 'Input Outputs',
+        title          => 'F Input Output',
+        title_multi    => 'F Input Outputs',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -1144,24 +1148,28 @@ __PACKAGE__->config(
           l1_flow_id => {
             header => 'l1_flow_id',
             width => 50,
+            no_column => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           l1_input_id => {
             header => 'l1_input_id',
             width => 50,
+            no_column => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           l1_source_id => {
             header => 'l1_source_id',
             width => 50,
+            no_column => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           l1_target_id => {
             header => 'l1_target_id',
             width => 50,
+            no_column => 1,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },                    
@@ -1334,8 +1342,8 @@ __PACKAGE__->config(
 
       'AuExtensionInputAndOutputs' => {
 #        display_column => 'name',
-        title          => 'Input und Output',
-        title_multi    => 'Input und Outputs',
+        title          => 'Inputs and Outputs',
+        title_multi    => 'Inputs and Outputs',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
@@ -1621,7 +1629,7 @@ __PACKAGE__->config(
           }, ### End of Columns
         }, ### End of Table
 
-      'AUExtensionVInputOutput' => {
+      'AuExtensionVInputOutput' => {
         display_column => 'name',
         title          => 'V InputOutput',
         title_multi    => 'V InputOutputs',
@@ -1676,75 +1684,221 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-           fieldtofields => {
-            header => 'fieldtofields',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          flow_inputs => {
-            header => 'flow_inputs',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          flows => {
-            header => 'flows',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          indexed_sequential => {
-            header => 'indexed_sequential',
+        }, ### End of Columns
+      }, ### End of Table
+      
+      'AuExtensionVFieldtofield' => {
+#        display_column => 'id',
+        title          => 'V Field to field',
+        title_multi    => 'V Field to fields',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+          id => {
+            header => 'id',
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          logical_physical_logicals => {
-            header => 'logical_physical_logicals',
+          source_id => {
+            header => 'source',
+            #no_column => 1,
             #width => 100,
-            #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => [ ],
           },
-          logical_physical_physicals => {
-            header => 'logical_physical_physicals',
+          target_id => {
+            header => 'target',
+            #no_column => 1,
             #width => 100,
-            #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => [  ],
           },
-          printer => {
-            header => 'printer',
-            width => 50,
-            #renderer => 'RA.ux.App.someJsFunc',
-            profiles => ['hidden' ],
-          },
-          program_inputs => {
-            header => 'program_inputs',
+          flow_id => {
+            header => 'flow_id',
             #width => 100,
-            #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => [ ],
           },
-          program_outputs => {
-            header => 'program_outputs',
+          input_id => {
+            header => 'input_id',
             #width => 100,
-            #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          screen => {
-            header => 'screen',
-            width => 50,
-            #renderer => 'RA.ux.App.someJsFunc',
-            profiles => ['hidden' ],
+            profiles => [ ],
           },
         }, ### End of Columns
       }, ### End of Table
+
+      'AuExtensionVProgram' => {
+        display_column => 'name',
+        title          => 'V Program',
+        title_multi    => 'V Programs',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+          id => {
+            header => 'id',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          alias_name => {
+            header => 'alias_name',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          dialect => {
+            header => 'dialect',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          source_language => {
+            header => 'source_language',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          modifier => {
+            header => 'modifier',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          name => {
+            header => 'name',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          uri => {
+            header => 'uri',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          version => {
+            header => 'version',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          library => {
+            header => 'library',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          measure => {
+            header => 'measure',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+        }, ### End of Columns
+      }, ### End of Table
+
+      'AuExtensionVType' => {
+        display_column => 'name',
+        title          => 'V_Type',
+        title_multi    => 'V_Types',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+          record_type => {
+            header => 'record_type',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          id => {
+            header => 'id',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          declared_level => {
+            header => 'declared_level',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          name => {
+            header => 'name',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          occurs => {
+            header => 'occurs',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          precision => {
+            header => 'precision',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          scale => {
+            header => 'scale',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          type => {
+            header => 'type',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          using_of_parameter => {
+            header => 'using_of_parameter',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          version => {
+            header => 'version',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          adabas_id => {
+            header => 'adabas_id',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          parent => {
+            header => 'parent',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          physical => {
+            header => 'physical',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          redefine => {
+            header => 'redefine',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          succession => {
+            header => 'succession',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+        }, ### End of Columns
+      }, ### End of Table 
+      
 
         
       }, ### End of TableSpecs  

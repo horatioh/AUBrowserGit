@@ -398,7 +398,7 @@ __PACKAGE__->config(
         },
       },
       'Flow' => {
-        display_column => 'flow_name',
+ #       display_column => 'flow_name',
         title          => 'Flow to',
         title_multi    => 'Flows to',
         iconCls        => 'ra-icon-pg',

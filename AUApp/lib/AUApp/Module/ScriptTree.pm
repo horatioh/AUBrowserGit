@@ -34,14 +34,14 @@ has 'AnalyseScript', is=> 'ro', isa => 'ArrayRef[HashRef]', default => sub {
 					params => '',
 					childs => [],					
 				},
-				{
-					id => 'setinputrecord',
-					text => 'Setze Analyse Inputrecord',
-					module => '',
-					url => 'main/db/auswertung_auextensionfinputrecord',
-					params => '',
-					childs => [],					
-				},
+#				{
+#					id => 'setinputrecord',
+#					text => 'Setze Analyse Inputrecord',
+#					module => '',
+#					url => 'main/db/auswertung_auextensionfinputrecord',
+#					params => '',
+#					childs => [],					
+#				},
 				{
 					id => 'setinputfield',
 					text => 'Setze Analyse Inputfeld',
@@ -58,14 +58,14 @@ has 'AnalyseScript', is=> 'ro', isa => 'ArrayRef[HashRef]', default => sub {
 					params => '',
 					childs => [],					
 				},
-				{
-					id => 'setoutputrecord',
-					text => 'Setze Analyse Outputrecord',
-					module => '',
-					url => 'main/db/auswertung_auextensionfoutputrecord',
-					params => '',
-					childs => [],					
-				},
+#				{
+#					id => 'setoutputrecord',
+#					text => 'Setze Analyse Outputrecord',
+#					module => '',
+#					url => 'main/db/auswertung_auextensionfoutputrecord',
+#					params => '',
+#					childs => [],					
+#				},
 				{
 					id => 'setoutputfield',
 					text => 'Setze Analyse Outputfeld',
@@ -79,7 +79,7 @@ has 'AnalyseScript', is=> 'ro', isa => 'ArrayRef[HashRef]', default => sub {
 		},
 		{
 			id => 'allinputs',
-			text => 'Alle Inputs',
+			text => 'Nur Inputs',
 			module => '',
 			url => 'main/db/auswertung_auextensiononlyinput',
 			params => '',
@@ -87,7 +87,7 @@ has 'AnalyseScript', is=> 'ro', isa => 'ArrayRef[HashRef]', default => sub {
 		},
 		{
 			id => 'alloutputs',
-			text => 'Alle Outputs',
+			text => 'Nur Outputs',
 			module => '',
 			url => 'main/db/auswertung_auextensiononlyoutput',
 			params => '',
@@ -103,7 +103,7 @@ has 'AnalyseScript', is=> 'ro', isa => 'ArrayRef[HashRef]', default => sub {
 		},
 		{
 			id => 'inputnoresult',
-			text => 'Inputfelder ohne Ergebnis',
+			text => 'Inputfelder ohne Outputs',
 			module => '',
 			url => 'auswertung/inputnoresult',
 			params => '',
@@ -194,12 +194,12 @@ sub organize_navtree_node_recursive {
 	$self->c->debug("Entered navtree_node_recursive with root_href:" . Dumper($root_href));
 	
 	my @children = ();
-	$DB::single=1;
+#	$DB::single=1;
 
 	my $child_array_ref = $root_href->{childs};
 	foreach my $si ( @{$child_array_ref} ) {
 		$self->c->debug("Iterating element:" . Dumper($si));
-		$DB::single=1;
+#		$DB::single=1;
 
 		my @child_item_array = ();
 		if ( $si->{childs} )  {
