@@ -48,8 +48,8 @@ sub _set_file_response {
   my ($self, $c, $file, $content_type) = @_;
   
   $c->response->header(
-#    'Content-Type' => $content_type,
-    'Content-Type' => 'Application/as400',
+    'Content-Type' => $content_type,
+#    'Content-Type' => 'Application/as400',
     'Cache-Control' => $self->cache_control_header,
 #    'Content-Type-Charset' => 'utf-8',
 #    'Content-Language' => 'de',
