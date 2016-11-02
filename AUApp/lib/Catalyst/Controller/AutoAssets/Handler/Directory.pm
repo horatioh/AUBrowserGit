@@ -49,28 +49,23 @@ sub _set_file_response {
   
   $c->response->header(
     'Content-Type' => $content_type,
-#    'Content-Type' => 'Application/as400',
     'Cache-Control' => $self->cache_control_header,
-#    'Content-Type-Charset' => 'utf-8',
-#    'Content-Language' => 'de',
   );
   
   # Added PG
-  my $lines = $file->slurp;
-  my $declines = decode( 'iso-8859-15', $lines );
-  my $enclines = encode('utf8', $declines);
-  $c->log->debug("_set_file_response-> Content-Type: $content_type");
-  $c->log->debug("Response Header-> " . Dumper($c->response->headers()));
+#  my $lines = $file->slurp;
+#  my $declines = decode( 'iso-8859-15', $lines );
+#  my $enclines = encode('utf8', $declines);
+#  $c->log->debug("_set_file_response-> Content-Type: $content_type");
+#  $c->log->debug("Response Header-> " . Dumper($c->response->headers()));
 #  $c->response->headers->header()->content_type_charset('utf-8');
 #  $c->log->debug("Response Header-> " . Dumper($c->response->headers()));
-  return $c->response->body( $enclines );
+#  return $c->response->body( $enclines );
   
 
-#  my $f= $file->openr;
-#  binmode $f;
-#  binmode $f, ':encoding(iso-8859-15)';
-
-#  return $c->response->body( $f );
+  my $f= $file->openr;
+  binmode $f;
+  return $c->response->body( $f );
 }
 
 

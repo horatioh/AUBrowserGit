@@ -74,12 +74,12 @@ sub BUILD {
 sub index :Chained :PathPrefix {
   my ($self, $c, @args) = @_;
 #$DB::single=1;
-  $c->log->debug("Catalyst::Controller::AutoAssets: index");
+#  $c->log->debug("Catalyst::Controller::AutoAssets: index");
     
   # New: set 'abort' just like Static::Simple to suppress log messages:
-#  if ( $self->no_logs && $c->log->can('abort') ) {
-#    $c->log->abort( 1 );
-#  }
+  if ( $self->no_logs && $c->log->can('abort') ) {
+    $c->log->abort( 1 );
+  }
   
   $self->request($c,@args);
   $c->detach;
