@@ -91,11 +91,11 @@ sub _ext_to_type {
   my ( $self, $full_path ) = @_;
   my $c = $self->_app;
 
-  $c->log->debug("_ext_to_type-> Full_Path: $full_path");
+#  $c->log->debug("_ext_to_type-> Full_Path: $full_path");
   if ( $full_path =~ /.*\.(\S{1,})$/xms ) {
     my $ext = $1;
     my $type = $self->MimeTypes->mimeTypeOf( $ext );
-    $c->log->debug("_ext_to_type-> Type: $type");
+#    $c->log->debug("_ext_to_type-> Type: $type");
     if ( $type ) {
       return ( ref $type ) ? $type->type : $type;
     }

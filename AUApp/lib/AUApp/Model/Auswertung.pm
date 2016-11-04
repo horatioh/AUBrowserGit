@@ -36,6 +36,7 @@ __PACKAGE__->config(
         user => 'au',
         password => 'Vienna',
         schema => 'au_extension',
+#        quote_names => q{1},
     },
     RapidDbic => {
 
@@ -1983,7 +1984,7 @@ $DB::single=1;
 }
 
 sub run_sql_dateifeldzuordnung {
-	my ($self, $c, $script)= @_;
+	my ($self, $c)= @_;
 	my $script = $self->dateifeldzuordnung_script;
 	my $pwd = `pwd`;
 	
@@ -1991,7 +1992,7 @@ sub run_sql_dateifeldzuordnung {
 	$self->run_sql_script($c, $script);
 }
 sub run_sql_entry_level_input {
-	my ($self, $c, $script)= @_;
+	my ($self, $c)= @_;
 	my $script = $self->entry_level_input_script;
 	my $pwd = `pwd`;
 	
@@ -1999,7 +2000,7 @@ sub run_sql_entry_level_input {
 	$self->run_sql_script($c, $script);
 }
 sub run_sql_entry_level_output {
-	my ($self, $c, $script)= @_;
+	my ($self, $c)= @_;
 	my $script = $self->entry_level_output_script;
 	my $pwd = `pwd`;
 	
@@ -2007,16 +2008,15 @@ sub run_sql_entry_level_output {
 	$self->run_sql_script($c, $script);
 }
 sub run_sql_input_feld_2_feld {
-	my ($self, $c, $script)= @_;
+	my ($self, $c)= @_;
 	my $script = $self->input_feld_2_feld_script;
 	my $pwd = `pwd`;
 	
 	$c->log->debug("Run_sql_input_feld_2_feld called with Pwd: $pwd script: $script");
 	$self->run_sql_script($c, $script);
 }
-no Moose;
 sub run_sql_output_feld_2_feld {
-	my ($self, $c, $script)= @_;
+	my ($self, $c)= @_;
 	my $script = $self->output_feld_2_feld_script;
 	my $pwd = `pwd`;
 	
@@ -2024,7 +2024,7 @@ sub run_sql_output_feld_2_feld {
 	$self->run_sql_script($c, $script);
 }
 sub run_sql_inputohneoutput {
-	my ($self, $c, $script)= @_;
+	my ($self, $c)= @_;
 	my $script = $self->inputohneoutput_script;
 	my $pwd = `pwd`;
 	
@@ -2032,12 +2032,13 @@ sub run_sql_inputohneoutput {
 	$self->run_sql_script($c, $script);
 }
 sub run_sql_outputohneinput {
-	my ($self, $c, $script)= @_;
+	my ($self, $c)= @_;
 	my $script = $self->outputohneinput_script;
 	my $pwd = `pwd`;
 	
 	$c->log->debug("Run_sql_outputohneinput called with Pwd: $pwd script: $script");
 	$self->run_sql_script($c, $script);
 }
+# no Moose;
 __PACKAGE__->meta->make_immutable;	
 1;

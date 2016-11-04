@@ -148,27 +148,6 @@ __PACKAGE__->config(
           },
         },
       },
-      'AllCall' => {
-        #display_column => '',
-        title        => 'All Call',
-        title_multi  => 'All Calls',
-        iconCls      => 'ra-icon-pg',
-        multiIconCls => 'ra-icon-pg-multi',
-        columns      => {
-          program => {
-            header => 'program',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          called => {
-            header => 'called',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-        },
-      },
       'BusinessRule' => {
         display_column => 'name',
         title          => 'Business Rule',
@@ -508,13 +487,6 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          indices => {
-            header => 'indices',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
         },
       },
       'InputOutput' => {
@@ -847,13 +819,6 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          program_statements => {
-            header => 'program_statements',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
           program_using_programs => {
             header => 'program_using_programs',
             #width => 100,
@@ -863,13 +828,6 @@ __PACKAGE__->config(
           },
           programs_using_used => {
             header => 'programs_using_used',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          working_storages => {
-            header => 'working_storages',
             #width => 100,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
@@ -1212,13 +1170,6 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          step_arguments => {
-            header => 'step_arguments',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
           step_conditions => {
             header => 'step_conditions',
             #width => 100,
@@ -1378,13 +1329,6 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          program_statements => {
-            header => 'program_statements',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
           programs_using => {
             header => 'programs_using',
             #width => 100,
@@ -1504,21 +1448,8 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          indice => {
-            header => 'indice',
-            #width => 100,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
           input_outputs => {
             header => 'input_outputs',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          step_arguments => {
-            header => 'step_arguments',
             #width => 100,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
@@ -1528,12 +1459,6 @@ __PACKAGE__->config(
             header => 'steps',
             #width => 100,
             #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          superdescriptor => {
-            header => 'superdescriptor',
-            #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
@@ -1553,13 +1478,6 @@ __PACKAGE__->config(
           },
           type_redefines => {
             header => 'type_redefines',
-            #width => 100,
-            #sortable => 1,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          working_storages => {
-            header => 'working_storages',
             #width => 100,
             #sortable => 1,
             #renderer => 'RA.ux.App.someJsFunc',
