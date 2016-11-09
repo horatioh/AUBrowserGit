@@ -78,7 +78,8 @@ __PACKAGE__->add_columns(
 
 =cut
 
-__PACKAGE__->set_primary_key("program", "succession");
+# PG uncommented next line
+#__PACKAGE__->set_primary_key("program", "succession");
 
 =head1 RELATIONS
 

@@ -56,11 +56,21 @@ __PACKAGE__->config(
       'InputOutput' => {
         page_class  => 'AUApp::Module::UriDbicPropPage',
       },
-
-      
- #     'Flow' => {
- #     	include_colspec => ['*', 'output.name']
- #     }
+      'FlowInput' => {
+      	include_colspec => ['*', 'flow.flow_name', 'input.name']
+      },
+      'LogicalPhysical' => {
+      	include_colspec => ['*', 'logical.name', 'physical.name']
+      },
+      'ProgramFlow' => {
+      	include_colspec => ['*', 'flow.flow_name']
+      },
+      'ProgramInput' => {
+      	include_colspec => ['*', 'input.name']
+      },
+      'ProgramOutput' => {
+      	include_colspec => ['*', 'output.name']
+      },
       
     },
 
@@ -349,14 +359,14 @@ __PACKAGE__->config(
             #profiles => [],
           },
           source_id => {
-            header => 'source',
+            header => 'source id',
             #no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
             profiles => ['hidden' ],
           },
           target_id => {
-            header => 'target',
+            header => 'target id',
             #no_column => 1,
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
@@ -374,6 +384,13 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             profiles => [ 'hidden' ],
           },
+          'input.name' => {
+            header => 'input name',
+            #width => 100,
+            #renderer => 'RA.ux.App.someJsFunc',
+            profiles => [ ],
+          },
+          
         },
       },
       'Flow' => {
@@ -490,7 +507,7 @@ __PACKAGE__->config(
         },
       },
       'InputOutput' => {
-        display_column => 'name',
+        #display_column => 'name',
         title          => 'InputOutput',
         title_multi    => 'InputOutputs',
         iconCls        => 'ra-icon-pg',
@@ -931,7 +948,7 @@ __PACKAGE__->config(
             header => 'program',
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['soft_rel'],
           },
           flow => {
             header => 'flow',
@@ -1352,7 +1369,7 @@ __PACKAGE__->config(
         },
       },
       'Type' => {
-        display_column => 'name',
+#        display_column => 'name',
         title          => 'Type',
         title_multi    => 'Types',
         iconCls        => 'ra-icon-pg',
@@ -1593,7 +1610,7 @@ __PACKAGE__->config(
     			size => 255,
     			sql => 'SELECT io.name FROM input_output io WHERE io.id = self.output',
     		}
-    	},
+    	},  # End of Flow
     	'Printer' => {
     		printer_name => {
     			data_type => "varchar",
@@ -1601,8 +1618,36 @@ __PACKAGE__->config(
     			size => 100,
     			sql => 'SELECT io.name FROM input_output io WHERE io.id = self.id',
     		}
-    	},
-    	
+    	},  # Endo of Printer
+    	'Fieldtofield' => {
+  			source_name => {
+    			data_type => "varchar",
+    			is_nullable => 0,
+    			size => 100,
+    			sql => 'SELECT ty.name FROM type ty WHERE ty.id = self.source_id',  				
+  			}, 
+  			input_name => {
+    			data_type => "varchar",
+    			is_nullable => 0,
+    			size => 100,
+    			sql => 'SELECT io.name FROM input_output io WHERE io.id = self.input_id',  				
+  			},  			
+  			target_name => {
+    			data_type => "varchar",
+    			is_nullable => 0,
+    			size => 100,
+    			sql => 'SELECT ty.name FROM type ty WHERE ty.id = self.target_id',  				
+  			},  			
+      	},  #End of FieldtoField
+    	'FxowInput' => {
+  			input_name => {
+    			data_type => "varchar",
+    			is_nullable => 0,
+    			size => 100,
+    			sql => 'SELECT io.name FROM input_output io WHERE io.id = self.input',  				
+  			},  			
+      	},  #End of FlowInput
+      	   	
     },
   },
 
