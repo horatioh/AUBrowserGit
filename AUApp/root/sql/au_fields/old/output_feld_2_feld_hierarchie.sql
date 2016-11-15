@@ -16,8 +16,6 @@ select
  f2f.target_id
 from entry_level_output el , public.fieldtofield f2f 
 where    el.output_feld_id = f2f.target_id
-and not (f2f.source_id    = el.output_feld_id)
-and not (f2f.source_id    = f2f.target_id)
 order by 1 , 3 , 2 , 4 , 5;
 select * from l1 order by 1 , 3 , 2 , 4 , 5; -- 8
 select  output_feld_id , flow_id , input_id , source_id , target_id ,count(*) from l1
@@ -39,8 +37,8 @@ select
  f2f.target_id
 from l1 , public.fieldtofield f2f
 where    l1.source_id = f2f.target_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.source_id = l1.target_id)
+--and not (f2f.source_id = f2f.target_id)
+--and not (f2f.source_id = l1.target_id)
 and not exists (select 0 from entry_level_output el where f2f.source_id = el.output_feld_id)
 group by l1.output_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
 order by 1 , 3 , 2 , 4 , 5;
@@ -66,8 +64,8 @@ select
  f2f.target_id
 from l2 , public.fieldtofield f2f
 where    l2.source_id = f2f.target_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.source_id = l2.target_id)
+--and not (f2f.source_id = f2f.target_id)
+--and not (f2f.source_id = l2.target_id)
 and not exists (select 0 from entry_level_output el where f2f.source_id = el.output_feld_id)
 and not exists (select 0 from l2 where f2f.source_id = l2.target_id)
 group by l2.output_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
@@ -94,8 +92,8 @@ select
  f2f.target_id
 from l3 , public.fieldtofield f2f
 where    l3.source_id = f2f.target_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.source_id = l3.target_id)
+--and not (f2f.source_id = f2f.target_id)
+--and not (f2f.source_id = l3.target_id)
 and not exists (select 0 from entry_level_output el where f2f.source_id = el.output_feld_id)
 and not exists (select 0 from l2 where f2f.source_id = l2.target_id)
 and not exists (select 0 from l3 where f2f.source_id = l3.target_id)
@@ -123,8 +121,8 @@ select
  f2f.target_id
 from l4 , public.fieldtofield f2f
 where    l4.source_id = f2f.target_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.source_id = l4.target_id)
+--and not (f2f.source_id = f2f.target_id)
+--and not (f2f.source_id = l4.target_id)
 and not exists (select 0 from entry_level_output el where f2f.source_id = el.output_feld_id)
 and not exists (select 0 from l2 where f2f.source_id = l2.target_id)
 and not exists (select 0 from l3 where f2f.source_id = l3.target_id)
@@ -153,8 +151,8 @@ select
  f2f.target_id
 from l5 , public.fieldtofield f2f
 where    l5.source_id = f2f.target_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.source_id = l5.target_id)
+--and not (f2f.source_id = f2f.target_id)
+--and not (f2f.source_id = l5.target_id)
 and not exists (select 0 from entry_level_output el where f2f.source_id = el.output_feld_id)
 and not exists (select 0 from l2 where f2f.source_id = l2.target_id)
 and not exists (select 0 from l3 where f2f.source_id = l3.target_id)
@@ -184,8 +182,8 @@ select
  f2f.target_id
 from l6 , public.fieldtofield f2f
 where    l6.source_id = f2f.target_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.source_id = l6.target_id)
+--and not (f2f.source_id = f2f.target_id)
+--and not (f2f.source_id = l6.target_id)
 and not exists (select 0 from entry_level_output el where f2f.source_id = el.output_feld_id)
 and not exists (select 0 from l2 where f2f.source_id = l2.target_id)
 and not exists (select 0 from l3 where f2f.source_id = l3.target_id)
@@ -216,8 +214,8 @@ select
  f2f.target_id
 from l7 , public.fieldtofield f2f
 where    l7.source_id = f2f.target_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.source_id = l7.target_id)
+--and not (f2f.source_id = f2f.target_id)
+--and not (f2f.source_id = l7.target_id)
 and not exists (select 0 from entry_level_output el where f2f.source_id = el.output_feld_id)
 and not exists (select 0 from l2 where f2f.source_id = l2.target_id)
 and not exists (select 0 from l3 where f2f.source_id = l3.target_id)

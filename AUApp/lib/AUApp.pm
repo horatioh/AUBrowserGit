@@ -15,7 +15,7 @@ use Catalyst qw/
 
 extends 'Catalyst';
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 __PACKAGE__->config(
     name => 'AUApp',

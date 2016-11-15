@@ -1439,7 +1439,7 @@ __PACKAGE__->config(
             header => 'adabas_id',
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['hidden'],
           },
           parent => {
             header => 'parent',
@@ -1573,7 +1573,7 @@ __PACKAGE__->config(
             header => 'adabas_id',
             #width => 100,
             #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
+            profiles => ['hidden'],
           },
           parent => {
             header => 'parent',
