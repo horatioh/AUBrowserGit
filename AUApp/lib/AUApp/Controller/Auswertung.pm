@@ -39,7 +39,9 @@ sub input2output :Local {
     $c->model('Auswertung')->run_sql_input_feld_2_feld($c, @args);
     
     # Detach and show result table ffieldtofieldresult in schema auextension from model auswertung
-    $c->detach('/approot',[ 'main' ,'db', 'auswertung_auextensionffieldtofieldresult' ]);
+#PG 05.12.16 V1.04 changed result table to auswertung_auextensionffieldtofieldinputresult
+#    $c->detach('/approot',[ 'main' ,'db', 'auswertung_auextensionffieldtofieldresult' ]);
+    $c->detach('/approot',[ 'main' ,'db', 'auswertung_auextensionffieldtofieldinputresult' ]);
 
 
   }  

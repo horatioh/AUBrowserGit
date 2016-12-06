@@ -12,8 +12,8 @@ create table f_output_datei
 --
 -- Hier bitte die ID des "input_output" objektes eintragen.
 -- 
-insert into f_input_datei values(5764);
-insert into f_output_datei values(5764);
+insert into f_input_datei values(9491);
+insert into f_output_datei values(9491);
 
 -- check: select * from f_input_datei;
 -- check: select * from f_output_datei;

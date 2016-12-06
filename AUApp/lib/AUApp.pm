@@ -6,6 +6,7 @@ use RapidApp 1.2000;
 
 use Catalyst qw/
     -Debug
+    ConfigLoader
     RapidApp::TabGui
     RapidApp::AuthCore
     RapidApp::CoreSchemaAdmin
@@ -15,11 +16,12 @@ use Catalyst qw/
 
 extends 'Catalyst';
 
-our $VERSION = '1.03';
+our $VERSION = '1.04';
 
 __PACKAGE__->config(
     name => 'AUApp',
-
+	'Plugin::ConfigLoader' => { file => 'AU_config.pl' },
+	
     # The TabGui plugin mounts the standard ExtJS explorer interface as the 
     # RapidApp root module (which is at the root '/' of the app by default)
     'Plugin::RapidApp::TabGui' => {
@@ -108,8 +110,9 @@ __PACKAGE__->config(
     	assets => [
     	{
     		controller => 'AUApp::Controller::Assets::AuSrcDir',
-    		type => 'Directory',
-    		include => '/home/gitzelp/aon/src_all',
+#    		type => 'Directory',
+    		type => 'SourceDirectory',
+   		include => '/home/gitzelp/aon/src_all',
     		allow_static_requests => 1,
     		persist_state => 1,
     	} ]

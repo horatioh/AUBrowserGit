@@ -112,6 +112,14 @@ __PACKAGE__->config(
         destroyable_relspec => ['*'],
       	
       },
+      ## Parameter Table - Allow CRUD
+      'AuExtensionExcludePgm' => {
+      	grid_class  => 'AUApp::Module::GridBase',
+        updatable_colspec   => ['*'],
+        creatable_colspec   => ['*'],
+        destroyable_relspec => ['*'],
+      	
+      },
       ## Enable URIDbicPropPage as page class
       'AuExtensionEntryLevel' => {
       	grid_class  => 'AUApp::Module::GridBase',
@@ -496,6 +504,120 @@ __PACKAGE__->config(
           }, ### End of Columns
         }, ### End of Table
 
+      'AuExtensionFFieldtofieldInputResult' => {
+#        display_column => 'name',
+        title          => 'Field to Field Input Result',
+        title_multi    => 'Field to Field Input Results',
+        iconCls        => 'ra-icon-pg',
+        multiIconCls   => 'ra-icon-pg-multi',
+        columns        => {
+###
+          level => {
+            header => 'level',
+            width => 50,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_feld_id => {
+            header => 'input feld id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_feld_name => {
+            header => 'input feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          program_id => {
+            header => 'program id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          program_name => {
+            header => 'program name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          program_uri => {
+            header => 'program uri',
+            width => 160,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          flow_id => {
+            header => 'flow id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_id => {
+            header => 'input id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_file_name => {
+            header => 'input file name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          input_uri => {
+            header => 'input uri',
+            width => 160,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          source_id => {
+            header => 'source id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          source_feld_name => {
+            header => 'source feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          output_id => {
+            header => 'output id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          output_file_name => {
+            header => 'output file name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          output_uri => {
+            header => 'output uri',
+            width => 160,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          target_id => {
+            header => 'target id',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+          target_feld_name => {
+            header => 'target feld name',
+            width => 80,
+            #renderer => 'RA.ux.App.someJsFunc',
+            #profiles => [],
+          },
+ ### 
+          }, ### End of Columns
+        }, ### End of Table
+
       'AuExtensionFFieldtofieldOutputResult' => {
 #        display_column => 'name',
         title          => 'Field to Field Output Result',
@@ -574,34 +696,22 @@ __PACKAGE__->config(
           }, ### End of Columns
         }, ### End of Table
 
-      'AuExtensionFFieldtofieldResult' => {
+      'AuExtensionFFieldtofield' => {
 #        display_column => 'name',
-        title          => 'Field to Field Result',
-        title_multi    => 'Field to Field Results',
+        title          => 'F Field to Field',
+        title_multi    => 'F Field to Field',
         iconCls        => 'ra-icon-pg',
         multiIconCls   => 'ra-icon-pg-multi',
         columns        => {
 ###
-          level => {
-            header => 'level',
+          id => {
+            header => 'id',
             width => 50,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          input_feld_id => {
-            header => 'input feld id',
-            width => 80,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          input_feld_name => {
-            header => 'input feld name',
-            width => 80,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          program_name => {
-            header => 'program name',
+          program_id => {
+            header => 'program id',
             width => 80,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
@@ -618,32 +728,20 @@ __PACKAGE__->config(
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          input_file_name => {
-            header => 'input file name',
-            width => 80,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
           source_id => {
             header => 'source id',
             width => 80,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
-          source_feld_name => {
-            header => 'source feld name',
+          output_id => {
+            header => 'output id',
             width => 80,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],
           },
           target_id => {
             header => 'target id',
-            width => 80,
-            #renderer => 'RA.ux.App.someJsFunc',
-            #profiles => [],
-          },
-          target_feld_name => {
-            header => 'target feld name',
             width => 80,
             #renderer => 'RA.ux.App.someJsFunc',
             #profiles => [],

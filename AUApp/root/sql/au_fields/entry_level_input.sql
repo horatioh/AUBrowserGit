@@ -7,15 +7,15 @@ drop table if exists f_input_felder;
 create table f_input_felder
 (id int);
 --
-insert into f_input_felder select f_id from f_type, f_input_datei where f_type.d_id = f_input_datei.id;
+insert into f_input_felder select f_id from f_type, f_input_datei  where f_type.d_id = f_input_datei.id;
 insert into f_input_felder select f_id from f_type, f_input_record where f_type.r_id = f_input_record.id;
-insert into f_input_felder select f_id from f_type, f_input_feld where f_type.f_id = f_input_feld.id;
+insert into f_input_felder select f_id from f_type, f_input_feld   where f_type.f_id = f_input_feld.id;
 --
 -- ----------------------------------------------------------------------------------------
--- (2) Afbau Tabelle entry_level_input
+-- (2) Afbau Tabelle entry_level
 -- ----------------------------------------------------------------------------------------
 --
-DROP TABLE if exists entry_level_input;
+DROP TABLE entry_level_input;
 CREATE TABLE entry_level_input AS
 SELECT
   if.id AS "input_feld_id" ,

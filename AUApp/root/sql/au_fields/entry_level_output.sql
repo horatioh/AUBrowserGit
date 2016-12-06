@@ -4,7 +4,7 @@
 -- ----------------------------------------------------------------------------------------
 --
 -- insert into f_output_datei values (4596);
--- insert into f_output_datei values (5278);
+-- insert into f_output_datei values (9491);
 --
 drop table if exists f_output_felder;
 create table f_output_felder
@@ -12,7 +12,7 @@ create table f_output_felder
 --
 insert into f_output_felder select f_id from f_type, f_output_datei where f_type.d_id  = f_output_datei.id;
 insert into f_output_felder select f_id from f_type, f_output_record where f_type.r_id = f_output_record.id;
-insert into f_output_felder select f_id from f_type, f_output_feld where f_type.f_id   = f_output_feld.id;
+insert into f_output_felder select f_id from f_type, f_output_feld   where f_type.f_id   = f_output_feld.id;
 --
 -- ----------------------------------------------------------------------------------------
 -- (2) Afbau Tabelle entry_level
@@ -50,7 +50,7 @@ FROM f_type ft
 RIGHT OUTER JOIN f_output_felder IF
 ON ft."f_id" = if.id
 ORDER BY 4 ,  11 ,  17;
--- SELECT * FROM entry_level_output;
--- SELECT COUNT(*) FROM entry_level_output; -- 94
--- SELECT COUNT(*) from f_output_felder;
--- select * from entry_level_output order by output_feld_id , d_id , d_recordid , f_id;
+SELECT * FROM entry_level_output;
+SELECT COUNT(*) FROM entry_level_output; -- 94
+SELECT COUNT(*) from f_output_felder;
+select * from entry_level_output order by output_feld_id , d_id , d_recordid , f_id;

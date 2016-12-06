@@ -200,3 +200,29 @@ from f_type_r ftr , public.type t
 where t.parent = ftr."r_id";
 
 -- check: select * from f_type order by "d_name" , "d_parent" , "d_succession" , "r_parent" , "r_id" , "r_succession" , "f_parent" , "f_id" , "f_succession";
+
+-- ----------------------------------------------------------------------------------------
+-- (5) Aufbau der Zwischen-Tabelle f_fieldtofield
+-- ----------------------------------------------------------------------------------------
+
+drop table if exists f_fieldtofield;
+create table f_fieldtofield as
+select
+ ftf.id        as id         ,
+ pf.program    as program_id ,
+ ftf.flow_id   as flow_id    ,
+ ftf.input_id  as input_id   ,
+ ftf.source_id as source_id  ,
+ fl.output     as output_id  ,
+ ftf.target_id as target_id
+from
+ public.fieldtofield as ftf ,
+ public.flow         as fl ,
+ public.program_flow as pf
+where fl.id   = ftf.flow_id
+and   pf.flow = fl.id
+order by ftf.flow_id , ftf.input_id, ftf.source_id, fl.output, ftf.target_id;
+
+-- check: select * from public.fieldtofield;
+-- check: select * from f_fieldtofield order by flow_id , input_id, source_id, output_id, target_id;
+-- check: select count(*) from f_fieldtofield; -- 229.162

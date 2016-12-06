@@ -1,2 +1,0 @@
-#!/usr/bin/bash
-rapidapp.pl --helpers Templates,TabGui,AuthCore,NavCore,RapidDbic AUApp -- --dsn 'dbi:Pg:dbname=au;host=localhost;port=5432',au,Vienna --loader-option db_schema=public --loader-option exclude='\A(ddm|dli_database|hierarchie_all|indices|parameter_registry|programoutputwithoutflow|program_statement|rdbms_table|sequential|step_argument|superdescriptor|working_storage)\z'

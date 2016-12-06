@@ -12,12 +12,10 @@ select
  f2f.input_id ,
  f2f. source_id ,
  f2f.target_id
-from entry_level el , public.fieldtofield f2f 
+from entry_level_input el , public.fieldtofield f2f 
 where    el.input_feld_id = f2f.source_id
-and not (f2f.target_id    = el.input_feld_id)
-and not (f2f.source_id    = f2f.target_id)
 order by 1 , 3 , 2 , 4 , 5;
-select * from l1 order by 1 , 3 , 2 , 4 , 5; -- 65
+select * from l1 order by 1 , 3 , 2 , 4 , 5; -- 2.362
 select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) from l1
 group by input_feld_id , flow_id , input_id , source_id , target_id
 having count(*) > 1;
@@ -37,12 +35,10 @@ select
  f2f.target_id
 from l1 , public.fieldtofield f2f
 where    l1.target_id = f2f.source_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.target_id = l1.source_id)
-and not exists (select 0 from entry_level el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
 group by l1.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
 order by 1 , 3 , 2 , 4 , 5;
-select * from l2 order by 1 , 3 , 2 , 4 , 5; -- 87
+select * from l2 order by 1 , 3 , 2 , 4 , 5; -- 344
 select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) 
 from l2
 group by input_feld_id , flow_id , input_id , source_id , target_id
@@ -64,13 +60,11 @@ select
  f2f.target_id
 from l2 , public.fieldtofield f2f
 where    l2.target_id = f2f.source_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.target_id = l2.source_id)
-and not exists (select 0 from entry_level el where f2f.target_id = el.input_feld_id)
-and not exists (select 0 from l1 where f2f.target_id = l1.source_id)
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l1                   where f2f.target_id = l1.source_id)
 group by l2.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
 order by 1 , 3 , 2 , 4 , 5;
-select * from l3 order by 1 , 3 , 2 , 4 , 5; -- 119
+select * from l3 order by 1 , 3 , 2 , 4 , 5; -- 637
 select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) 
 from l3
 group by input_feld_id , flow_id , input_id , source_id , target_id
@@ -92,14 +86,12 @@ select
  f2f.target_id
 from l3 , public.fieldtofield f2f
 where    l3.target_id = f2f.source_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.target_id = l3.source_id)
-and not exists (select 0 from entry_level el where f2f.target_id = el.input_feld_id)
-and not exists (select 0 from l1 where f2f.target_id = l1.source_id)
-and not exists (select 0 from l2 where f2f.target_id = l2.source_id)
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l2                   where f2f.target_id = l2.source_id)
+and not exists (select 0 from l3                   where f2f.target_id = l3.source_id)
 group by l3.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
 order by 1 , 3 , 2 , 4 , 5;
-select * from l4 order by 1 , 3 , 2 , 4 , 5; -- 62
+select * from l4 order by 1 , 3 , 2 , 4 , 5; -- 548
 select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) 
 from l4
 group by input_feld_id , flow_id , input_id , source_id , target_id
@@ -121,15 +113,13 @@ select
  f2f.target_id
 from l4 , public.fieldtofield f2f
 where    l4.target_id = f2f.source_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.target_id = l4.source_id)
-and not exists (select 0 from entry_level el where f2f.target_id = el.input_feld_id)
-and not exists (select 0 from l1 where f2f.target_id = l1.source_id)
-and not exists (select 0 from l2 where f2f.target_id = l2.source_id)
-and not exists (select 0 from l3 where f2f.target_id = l3.source_id)
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l2                   where f2f.target_id = l2.source_id)
+and not exists (select 0 from l3                   where f2f.target_id = l3.source_id)
+and not exists (select 0 from l4                   where f2f.target_id = l4.source_id)
 group by l4.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
 order by 1 , 3 , 2 , 4 , 5;
-select * from l5 order by 1 , 3 , 2 , 4 , 5; -- 35
+select * from l5 order by 1 , 3 , 2 , 4 , 5; -- 226
 select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) 
 from l5
 group by input_feld_id , flow_id , input_id , source_id , target_id
@@ -151,16 +141,14 @@ select
  f2f.target_id
 from l5 , public.fieldtofield f2f
 where    l5.target_id = f2f.source_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.target_id = l5.source_id)
-and not exists (select 0 from entry_level el where f2f.target_id = el.input_feld_id)
-and not exists (select 0 from l1 where f2f.target_id = l1.source_id)
-and not exists (select 0 from l2 where f2f.target_id = l2.source_id)
-and not exists (select 0 from l3 where f2f.target_id = l3.source_id)
-and not exists (select 0 from l4 where f2f.target_id = l4.source_id)
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l2             where f2f.target_id = l2.source_id)
+and not exists (select 0 from l3             where f2f.target_id = l3.source_id)
+and not exists (select 0 from l4             where f2f.target_id = l4.source_id)
+and not exists (select 0 from l5             where f2f.target_id = l5.source_id)
 group by l5.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
 order by 1 , 3 , 2 , 4 , 5;
-select * from l6 order by 1 , 3 , 2 , 4 , 5; -- 2
+select * from l6 order by 1 , 3 , 2 , 4 , 5; -- 9
 select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) 
 from l6
 group by input_feld_id , flow_id , input_id , source_id , target_id
@@ -182,14 +170,12 @@ select
  f2f.target_id
 from l6 , public.fieldtofield f2f
 where    l6.target_id = f2f.source_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.target_id = l6.source_id)
-and not exists (select 0 from entry_level el where f2f.target_id = el.input_feld_id)
-and not exists (select 0 from l1 where f2f.target_id = l1.source_id)
-and not exists (select 0 from l2 where f2f.target_id = l2.source_id)
-and not exists (select 0 from l3 where f2f.target_id = l3.source_id)
-and not exists (select 0 from l4 where f2f.target_id = l4.source_id)
-and not exists (select 0 from l5 where f2f.target_id = l5.source_id)
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l2                   where f2f.target_id = l2.source_id)
+and not exists (select 0 from l3                   where f2f.target_id = l3.source_id)
+and not exists (select 0 from l4                   where f2f.target_id = l4.source_id)
+and not exists (select 0 from l5                   where f2f.target_id = l5.source_id)
+and not exists (select 0 from l6                   where f2f.target_id = l6.source_id)
 group by l6.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
 order by 1 , 3 , 2 , 4 , 5;
 select * from l7 order by 1 , 3 , 2 , 4 , 5; -- 0
@@ -214,15 +200,13 @@ select
  f2f.target_id
 from l7 , public.fieldtofield f2f
 where    l7.target_id = f2f.source_id
-and not (f2f.source_id = f2f.target_id)
-and not (f2f.target_id = l7.source_id)
-and not exists (select 0 from entry_level el where f2f.target_id = el.input_feld_id)
-and not exists (select 0 from l1 where f2f.target_id = l1.source_id)
-and not exists (select 0 from l2 where f2f.target_id = l2.source_id)
-and not exists (select 0 from l3 where f2f.target_id = l3.source_id)
-and not exists (select 0 from l4 where f2f.target_id = l4.source_id)
-and not exists (select 0 from l5 where f2f.target_id = l5.source_id)
-and not exists (select 0 from l6 where f2f.target_id = l6.source_id)
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l2                   where f2f.target_id = l2.source_id)
+and not exists (select 0 from l3                   where f2f.target_id = l3.source_id)
+and not exists (select 0 from l4                   where f2f.target_id = l4.source_id)
+and not exists (select 0 from l5                   where f2f.target_id = l5.source_id)
+and not exists (select 0 from l6                   where f2f.target_id = l6.source_id)
+and not exists (select 0 from l7                   where f2f.target_id = l7.source_id)
 group by l7.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
 order by 1 , 3 , 2 , 4 , 5;
 select * from l8 order by 1 , 3 , 2 , 4 , 5; -- 0
@@ -233,7 +217,106 @@ having count(*) > 1
 order by count(*) desc; 
 --
 -- ----------------------------------------------------------------------------------------
--- (9) Afbau Result Tabele
+-- (9) Afbau Tabelle level 9
+-- ----------------------------------------------------------------------------------------
+--
+drop table if exists l9;
+create table l9 as
+select 
+ CAST(9 AS INT) as Level ,
+ l8.input_feld_id ,
+ f2f.flow_id ,
+ f2f.input_id ,
+ f2f. source_id ,
+ f2f.target_id
+from l8 , public.fieldtofield f2f
+where    l8.target_id = f2f.source_id
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l2                   where f2f.target_id = l2.source_id)
+and not exists (select 0 from l3                   where f2f.target_id = l3.source_id)
+and not exists (select 0 from l4                   where f2f.target_id = l4.source_id)
+and not exists (select 0 from l5                   where f2f.target_id = l5.source_id)
+and not exists (select 0 from l6                   where f2f.target_id = l6.source_id)
+and not exists (select 0 from l7                   where f2f.target_id = l7.source_id)
+and not exists (select 0 from l8                   where f2f.target_id = l8.source_id)
+group by l8.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
+order by 1 , 3 , 2 , 4 , 5;
+select * from l9 order by 1 , 3 , 2 , 4 , 5; -- 0
+select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) 
+from l9
+group by input_feld_id , flow_id , input_id , source_id , target_id
+having count(*) > 1
+order by count(*) desc; 
+--
+-- ----------------------------------------------------------------------------------------
+-- (10) Afbau Tabelle level 10
+-- ----------------------------------------------------------------------------------------
+--
+drop table if exists l10;
+create table l10 as
+select 
+ CAST(10 AS INT) as Level ,
+ l9.input_feld_id ,
+ f2f.flow_id ,
+ f2f.input_id ,
+ f2f. source_id ,
+ f2f.target_id
+from l9 , public.fieldtofield f2f
+where    l9.target_id = f2f.source_id
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l2                   where f2f.target_id = l2.source_id)
+and not exists (select 0 from l3                   where f2f.target_id = l3.source_id)
+and not exists (select 0 from l4                   where f2f.target_id = l4.source_id)
+and not exists (select 0 from l5                   where f2f.target_id = l5.source_id)
+and not exists (select 0 from l6                   where f2f.target_id = l6.source_id)
+and not exists (select 0 from l7                   where f2f.target_id = l7.source_id)
+and not exists (select 0 from l8                   where f2f.target_id = l8.source_id)
+and not exists (select 0 from l9                   where f2f.target_id = l9.source_id)
+group by l9.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
+order by 1 , 3 , 2 , 4 , 5;
+select * from l10 order by 1 , 3 , 2 , 4 , 5; -- 0
+select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) 
+from l10
+group by input_feld_id , flow_id , input_id , source_id , target_id
+having count(*) > 1
+order by count(*) desc; 
+--
+-- ----------------------------------------------------------------------------------------
+-- (11) Afbau Tabelle level 11
+-- ----------------------------------------------------------------------------------------
+--
+drop table if exists l11;
+create table l11 as
+select 
+ CAST(11 AS INT) as Level ,
+ l10.input_feld_id ,
+ f2f.flow_id ,
+ f2f.input_id ,
+ f2f. source_id ,
+ f2f.target_id
+from l10 , public.fieldtofield f2f
+where    l10.target_id = f2f.source_id
+and not exists (select 0 from entry_level_input el where f2f.target_id = el.input_feld_id)
+and not exists (select 0 from l2                   where f2f.target_id = l2.source_id)
+and not exists (select 0 from l3                   where f2f.target_id = l3.source_id)
+and not exists (select 0 from l4                   where f2f.target_id = l4.source_id)
+and not exists (select 0 from l5                   where f2f.target_id = l5.source_id)
+and not exists (select 0 from l6                   where f2f.target_id = l6.source_id)
+and not exists (select 0 from l7                   where f2f.target_id = l7.source_id)
+and not exists (select 0 from l8                   where f2f.target_id = l8.source_id)
+and not exists (select 0 from l9                   where f2f.target_id = l9.source_id)
+and not exists (select 0 from l10                  where f2f.target_id = l10.source_id)
+group by l10.input_feld_id , f2f.flow_id , f2f.input_id , f2f.source_id , f2f.target_id
+order by 1 , 3 , 2 , 4 , 5;
+select * from l11 order by 1 , 3 , 2 , 4 , 5; -- 0
+select  input_feld_id , flow_id , input_id , source_id , target_id ,count(*) 
+from l11
+group by input_feld_id , flow_id , input_id , source_id , target_id
+having count(*) > 1
+order by count(*) desc; 
+--
+-- ----------------------------------------------------------------------------------------
+-- (11) Afbau Result Tabele
 -- ----------------------------------------------------------------------------------------
 --
 drop table if exists l_all;
@@ -253,6 +336,10 @@ union
 select * from l7
 union
 select * from l8
+union
+select * from l9
+union
+select * from l10
 order by 1 , 2 , 4 , 3 , 5 , 6;
 select * from l_all
 order by 1 , 2 , 4 , 3 , 5 , 6;
@@ -292,7 +379,3 @@ order by l.level , l.input_feld_id , l.flow_id , l.input_id , l.source_id , l.ta
 select * from f_fieldtofield_result 
 order by level , input_feld_id , flow_id , input_id , source_id , target_id
 ;
-
-
-
--- select * from l1 order by l1_target_id , input_feld_id , l1_source_d_id , l1_source_r_id , l1_program_id , l1_flow_id , l1_source_id , l1_target_id;  

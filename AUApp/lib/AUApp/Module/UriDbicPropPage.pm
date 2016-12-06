@@ -12,8 +12,8 @@ use RapidApp::DBIC::Component::TableSpec;
 
 use RapidApp::Util qw(:all);
 
-has 'URIBasePath' => ( is => 'ro', isa => 'Str', default => '/auapp/controller/assets/ausrcdir/static/');
-has 'URIFilePath' => ( is => 'ro', isa => 'Str', default => 'file\:\/\/\/D\:\/cygwin64\/home\/gitzelp\/aon\/src_all\/');
+has 'URIBasePath' => ( is => 'rw', isa => 'Str', default => '/auapp/controller/assets/ausrcdir/static/');
+has 'URIFilePath' => ( is => 'rw', isa => 'Str', default => 'file\:\/\/\/D\:\/cygwin64\/home\/gitzelp\/aon\/src_all\/');
 
 has 'ResultSource' => ( is => 'ro', required => 1 );
 

@@ -12,12 +12,6 @@ with 'Catalyst::Controller::AutoAssets::Handler';
 use Path::Class 0.32 qw( dir file );
 use MIME::Types;
 
-# Added PG
-use Encode::Locale;
-use Encode;
-use utf8;
-use Data::Dumper;
-
 
 sub BUILD {
   my $self = shift;
@@ -52,17 +46,6 @@ sub _set_file_response {
     'Cache-Control' => $self->cache_control_header,
   );
   
-  # Added PG
-#  my $lines = $file->slurp;
-#  my $declines = decode( 'iso-8859-15', $lines );
-#  my $enclines = encode('utf8', $declines);
-#  $c->log->debug("_set_file_response-> Content-Type: $content_type");
-#  $c->log->debug("Response Header-> " . Dumper($c->response->headers()));
-#  $c->response->headers->header()->content_type_charset('utf-8');
-#  $c->log->debug("Response Header-> " . Dumper($c->response->headers()));
-#  return $c->response->body( $enclines );
-  
-
   my $f= $file->openr;
   binmode $f;
   return $c->response->body( $f );
@@ -72,6 +55,7 @@ sub _set_file_response {
 sub _resolve_subfile_content_type {
   my $self = shift;
   my $File = shift;
+    
   my $content_type = $self->subfile_meta->{$File}->{content_type}
     or die "content_type not found in subfile_meta for $File!";
   return $content_type;
@@ -82,6 +66,7 @@ has 'content_type_resolver', is => 'ro', isa => 'CodeRef', default => sub{ \&_ex
 
 has 'MimeTypes', is => 'ro', isa => 'MIME::Types', lazy => 1, default => sub {
   my $self = shift;
+   
   return MIME::Types->new( only_complete => 1 );
 };
 
@@ -91,22 +76,18 @@ sub _ext_to_type {
   my ( $self, $full_path ) = @_;
   my $c = $self->_app;
 
-#  $c->log->debug("_ext_to_type-> Full_Path: $full_path");
   if ( $full_path =~ /.*\.(\S{1,})$/xms ) {
     my $ext = $1;
     my $type = $self->MimeTypes->mimeTypeOf( $ext );
-#    $c->log->debug("_ext_to_type-> Type: $type");
     if ( $type ) {
       return ( ref $type ) ? $type->type : $type;
     }
     else {
-#      return 'text/plain';
       return 'unknown';
 
     }
   }
   else {
-#    return 'text/plain';
     return 'unknown';
 
   }

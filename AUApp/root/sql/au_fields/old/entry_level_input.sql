@@ -12,11 +12,11 @@ insert into f_input_felder select f_id from f_type, f_input_record where f_type.
 insert into f_input_felder select f_id from f_type, f_input_feld where f_type.f_id = f_input_feld.id;
 --
 -- ----------------------------------------------------------------------------------------
--- (2) Afbau Tabelle entry_level
+-- (2) Afbau Tabelle entry_level_input
 -- ----------------------------------------------------------------------------------------
 --
-DROP TABLE entry_level;
-CREATE TABLE entry_level AS
+DROP TABLE if exists entry_level_input;
+CREATE TABLE entry_level_input AS
 SELECT
   if.id AS "input_feld_id" ,
   --
@@ -47,7 +47,7 @@ FROM f_type ft
 RIGHT OUTER JOIN f_input_felder IF
 ON ft."f_id" = if.id
 ORDER BY 4 ,  11 ,  17;
-SELECT * FROM entry_level;
-SELECT COUNT(*) FROM entry_level; -- 94
+SELECT * FROM entry_level_input;
+SELECT COUNT(*) FROM entry_level_input; -- 94
 SELECT COUNT(*) from f_input_felder; -- 94
-select * from entry_level order by input_feld_id , input_feld_id , d_recordid , f_id;
+select * from entry_level_input order by input_feld_id , input_feld_id , d_recordid , f_id;
